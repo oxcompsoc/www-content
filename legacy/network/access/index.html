@@ -1,0 +1,97 @@
+ <h1>
+  Accessing the Compsoc Network
+ </h1>
+ <p>
+  <em>
+   Please note
+  </em>
+  as of December 2010, we have no servers that allow access to
+general society members.  Thus, the information below is provided for reference
+only.
+ </p>
+ <p>
+  There are a variety of methods by which you can access your account and mail on
+the Compsoc network. These include SSH for logging in, POP3 for mail retrieval
+and SFTP for file transfer.
+ </p>
+ <p>
+  Please note that no plaintext services are now offered by Compsoc. please see
+the
+  <a href="#ssh">
+   section on SSH
+  </a>
+  for more details on how to access Compsoc securely
+in for a variety of purposes.  Additionally, SSL IMAP4 and POP3 services are now
+supported.
+ </p>
+ <p>
+  You should ssh to the machine on which you have been given an account —
+either stanley or salami.
+ </p>
+ <p>
+  It is good practice to verify the host key fingerprints when you connect from a
+new machine. To help in doing this, they have been provided
+  <a href="/network/compsoc-ssh-keys.asc">
+   here
+  </a>
+  , PGP
+signed by the
+  <a href="./../../news/New_Support_GPG_Key/">
+   support team GPG key
+  </a>
+  .
+ </p>
+ <h2>
+  <a id="ssh" name="ssh">
+   SSH
+  </a>
+ </h2>
+ <p>
+  Many common methods by which you may wish to access your account on the Compsoc
+network (or elsewhere) — including telnet, POP3, FTP and more — exchange data
+in plain (that is, non-encrypted) text. It's relatively easy for nefarious
+persons to grab your plain text password (or other potentially confidential
+information) from the network as it flashes by.
+ </p>
+ <p>
+  SSH encrypts all the data it sends over the network, including your password.
+For this reason, we recommend you use SSH for logging in to the Compsoc network
+and SCP — a file transfer program which is part of the SSH family — for file
+transfers. It's also possible to use SSH to encrypt mail transfers using a
+technique called "port forwarding" — see the SSH documentation for details.
+ </p>
+ <p>
+  SSH clients are available for most operating systems. Linux and BSD
+distributions usually provide one — often
+  <a href="http://www.openssh.com/">
+   OpenSSH
+  </a>
+  , which originated in
+the
+  <a href="http://www.openbsd.org/">
+   OpenBSD
+  </a>
+  project. To connect to the Compsoc network from a Linux
+machine, run:
+ </p>
+ <pre><code>$ ssh username@machinename.ox.compsoc.net
+</code></pre>
+ <p>
+  replacing machinename by the desired choice.
+ </p>
+ <p>
+  A variety of SSH clients are available for Microsoft Windows.
+  <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">
+   PuTTY
+  </a>
+  is an
+excellent basic client. It does not implement some of the more complex features
+of other SSH clients, but it's more than adequate for simple terminal
+connections. And it's free.
+ </p>
+ <h2>
+  Mail
+ </h2>
+ <p>
+  Mail still requires some setup. Details will appear here when they are sorted.
+ </p>
