@@ -1,7 +1,7 @@
 [hide sponsors /]
 [meta title="Jane Street Capital"]
-<object data="/static/images/sponsors/janestreet.svg" type="image/svg+xml" style="display: block;max-width: 600px; margin: 0 auto;">
-<img src="/static/images/sponsors/janestreet.png" alt="Jane Street Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
+<object data="/static/images/companies/janestreet.svg" type="image/svg+xml" style="display: block;max-width: 600px; margin: 0 auto;">
+<img src="/static/images/companies/janestreet.png" alt="Jane Street Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
 </object>
 
 [Jane Street Capital](http://www.janestreet.com/) is a quantitative proprietary

@@ -1,7 +1,7 @@
 [hide sponsors /]
 [meta title="Bank of America"]
-<object data="/static/images/sponsors/boaml.svg" type="image/svg+xml" style="display: block;max-width: 800px; margin: 0 auto;">
-<img src="/static/images/sponsors/boaml.png" alt="BoAML Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
+<object data="/static/images/companies/boaml.svg" type="image/svg+xml" style="display: block;max-width: 800px; margin: 0 auto;">
+<img src="/static/images/companies/boaml.png" alt="BoAML Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
 </object>
 
 [Bank of America](https://www.bankofamerica.com/) is one of the world's largest

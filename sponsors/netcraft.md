@@ -1,5 +1,5 @@
 [hide sponsors /]
-<img src="/static/images/sponsors/netcraft.png" alt="Netcraft Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
+<img src="/static/images/companies/netcraft.png" alt="Netcraft Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" />
 
 [Netcraft](http://news.netcraft.com) is an Internet services company based in
 Bath which provides internet data analysis, defences against fraud and
