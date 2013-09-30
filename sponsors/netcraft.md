@@ -9,3 +9,7 @@ ultimately protecting hundreds of millions of people.
 
 Netcraft have provided the society with significant financial sponsorship,
 which helped us restart the society in 2011.
+
+## Events hosted by Netcraft:
+
+[events tags="netcraft" /]

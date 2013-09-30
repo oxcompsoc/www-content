@@ -8,3 +8,7 @@
 We solve the technical problems, so they can solve the human ones. Combating terrorism. Tracking disease outbreaks. Finding missing and exploited children. We believe that with the right technology and enough data, people can still solve hard problems and change the world for the better.
 
 View a live demo of our data fusion platforms, and learn how you can be a part of our mission.
+
+## Events hosted by Palantir:
+
+[events tags="palantir" /]

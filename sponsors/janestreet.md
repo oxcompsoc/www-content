@@ -12,3 +12,7 @@ Kong.
 Jane Street have provided the society with financial support which has enabled
 us to keep membership costs low and support social events as well as cover
 general running costs.
+
+## Events hosted by Jane Street:
+
+[events tags="janestreet" /]

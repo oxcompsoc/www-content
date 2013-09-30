@@ -4,3 +4,7 @@
 </object>
 
 If you have any questions about career opportunities, feel free to contact [ruth@fb.com](mailto:ruth@fb.com)
+
+## Events hosted by Facebook:
+
+[events tags="facebook" /]

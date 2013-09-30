@@ -4,7 +4,7 @@ IT, computers and the internet and to organise meetings for members to further
 our computing interests.  Meetings often include talks by invited guest speakers
 as well as practical courses run by Compsoc members on fields in which they are
 particularly interested.  We also hold a variety of social events including Film
-Nights, Gaming (LAN) Parties, and weekly "Geek Nights". For more information on 
+Nights, Gaming (LAN) Parties, and weekly "Geek Nights". For more information on
 our activities, you can take a look at our [[/events]].
 
 The society was founded at St John's College in 1978.  To find out more, have a
@@ -22,5 +22,8 @@ Please address general comments or questions on Compsoc to the [[/committee]]
 (<committee@ox.compsoc.net>); matters related to the administration of the
 network should be sent to our [[network/System_Administrators]]
 (<sysadmin@ox.compsoc.net>).
+
+## Find us on Facebook
+[embed page="facebook_links" /]
 
 [announce]: http://lists.ox.compsoc.net/mailman/listinfo/compsoc-announce

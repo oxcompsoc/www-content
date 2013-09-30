@@ -6,3 +6,8 @@
 [Metaswitch Networks](http://www.metaswitch.com/) develops, manufactures,
 markets and supports Class 5 Softswitch products for central office and
 regional switching center deployments.
+
+
+## Events hosted by Metaswitch:
+
+[events tags="metaswitch" /]

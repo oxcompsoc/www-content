@@ -39,3 +39,7 @@ financial industry.
 
 Six- and 12-month industrial placements are available within the Technology
 division.
+
+## Events hosted by Bank of America:
+
+[events tags="boaml" /]

@@ -8,3 +8,7 @@ research, software and IT systems for use in investment management.
 
 They have provided the society with significant sponsorship and we look forward
 to a lasting, productive relationship.
+
+## Events hosted by G-Research:
+
+[events tags="gresearch" /]
