@@ -1,7 +1,1 @@
-## Events Today
-
-[events when="today" /]
-
-## Upcoming Events
-
-[events when="future" /]
+[events when="today_onwards" group /]

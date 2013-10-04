@@ -11,4 +11,4 @@ View a live demo of our data fusion platforms, and learn how you can be a part o
 
 ## Events hosted by Palantir:
 
-[events tags="palantir" /]
+[events tags="palantir" group /]

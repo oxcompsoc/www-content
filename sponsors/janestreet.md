@@ -15,4 +15,4 @@ general running costs.
 
 ## Events hosted by Jane Street:
 
-[events tags="janestreet" /]
+[events tags="janestreet" group /]

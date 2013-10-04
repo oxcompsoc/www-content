@@ -12,4 +12,4 @@ which helped us restart the society in 2011.
 
 ## Events hosted by Netcraft:
 
-[events tags="netcraft" /]
+[events tags="netcraft" group /]

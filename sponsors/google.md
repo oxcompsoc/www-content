@@ -5,4 +5,4 @@
 
 ## Events hosted by Google:
 
-[events tags="google" /]
+[events tags="google" group /]

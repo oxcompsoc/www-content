@@ -42,4 +42,4 @@ division.
 
 ## Events hosted by Bank of America:
 
-[events tags="boaml" /]
+[events tags="boaml" group /]

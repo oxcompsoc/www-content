@@ -7,4 +7,4 @@ If you have any questions about career opportunities, feel free to contact [ruth
 
 ## Events hosted by Facebook:
 
-[events tags="facebook" /]
+[events tags="facebook" group /]

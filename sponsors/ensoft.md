@@ -5,4 +5,4 @@
 
 ## Events hosted by Ensoft:
 
-[events tags="ensoft" /]
+[events tags="ensoft" group /]

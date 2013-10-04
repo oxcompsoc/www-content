@@ -10,4 +10,4 @@ regional switching center deployments.
 
 ## Events hosted by Metaswitch:
 
-[events tags="metaswitch" /]
+[events tags="metaswitch" group /]

@@ -5,4 +5,4 @@
 
 ## Events hosted by Amazon:
 
-[events tags="amazon" /]
+[events tags="amazon" group /]

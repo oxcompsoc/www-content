@@ -11,4 +11,4 @@ to a lasting, productive relationship.
 
 ## Events hosted by G-Research:
 
-[events tags="gresearch" /]
+[events tags="gresearch" group /]
