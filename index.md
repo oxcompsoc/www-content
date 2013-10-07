@@ -19,13 +19,13 @@ and how you can get involved.
 </div>
 <div class="col-sm-6">
 <div class="well">
-  <h2 class="text-center">[[/events/tags/learn|Learn to Code]]</h2>
+  <h2 class="text-center">[[/learn|Learn to Code]]</h2>
   <p>This year, CompSoc are running a new set of events called
   <strong>&quot;Learn to Code&quot;</strong>. They will include both lectures
   and workshops, and will be hosted throughout the term.</p>
   <p>We have also opened up a facebook group for those who want to attend the
   events, see the link below for more details.</p>
-  <p class="text-center">[[/events/tags/learn|ox.compsoc.net/learn]]</p>
+  <p class="text-center">[[/learn|ox.compsoc.net/learn]]</p>
 </div>
 <div class="well">
   <h2 class="text-center">Find Us on Facebook</h2>

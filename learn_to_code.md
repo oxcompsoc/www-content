@@ -1,1 +1,1 @@
-[redirect location="events/tags/learn/" status_code=302 /]
+[redirect location="learn/" status_code=301 /]
