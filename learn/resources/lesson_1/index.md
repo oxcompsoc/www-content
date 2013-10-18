@@ -1,4 +1,4 @@
-[meta header="Lesson 1: Introduction with turtle" /]
+[meta title="Lesson 1: Introduction with Turtle" /]
 
 [embed page="/learn/resources/highlight.js/embed" /]
 
@@ -14,7 +14,7 @@ this pentagon example:
 
 ## Getting Started
 
-Firstly, open up your terminal...
+Firstly, open up your [[../definitions/terminal|terminal]]...
 
 * If you are on the **Lab Computers**, Hover your mouse over `Activities` on
   the top-left of the screen, and click on the black terminal icon on the left.
@@ -116,6 +116,20 @@ Open your [[../definitions/text_editor|text editor]] (Sublime Text):
   would.
 
 Save this new empty file as `001.py` in your new `python` folder.
+
+<div class="panel panel-danger">
+  <div class="panel-heading"><strong>Note</strong></div>
+  <div class="panel-body">
+  <strong>Throughout this lesson (and indeed the course) there will be many
+  code examples. Every time that we make a change to the code, you do not need
+  to save it as the same file you were just working on, you can at any point
+  save it with another name, so that you can keep the code from whatever you
+  were doing last.
+  <br /><br />
+  It is up to you when you do this, it will not be suggested in these
+  resources.</strong>
+  </div>
+</div>
 
 ### Starting Code
 
