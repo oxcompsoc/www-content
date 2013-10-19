@@ -166,7 +166,7 @@ You should take notice of three things:
 #### Firstly:
 
 We now have some lines of our code that start with a "`#`", these are called
-[[../definitions/comments|comments]]. Python ignores comments, they are purely
+[[../definitions/comment|comments]]. Python ignores comments, they are purely
 there so that we can add extra information to our code to help us understand
 it.
 
@@ -184,7 +184,7 @@ and
     turtle.forward(100) # Comment on the same line as command
 
 are all **identical**. You can read more about comments
-[[../definitions/comments|here]].
+[[../definitions/comment|here]].
 
 #### Secondly:
 

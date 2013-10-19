@@ -60,10 +60,65 @@ terminal.
 
 ### Windows
 
-Instructions to come... (this will take a while to get right, and requires me
-to actually use windows)
+Windows is one of the few platforms that does not come with Python pre-installed,
+so you will need to acquire a copy. The Python installer for Windows is freely
+available [at the official website]
+(http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi). Download this and
+follow the instructions and by the end, you'll have a working python installation.
 
-If I don't actually get round to doing this in time, follow the in-depth
-instructions on Zed Shaw's Free Online Python Course (**Note: Ignore the stuff
-about installing Notepad++**):
-[http://learnpythonthehardway.org/book/ex0.html](http://learnpythonthehardway.org/book/ex0.html#windows)
+#### Test Python Works
+
+##### The Easy Way
+
+Python for Windows comes with an inbuilt editor called IDLE (named for Eric
+Idle of Monty Python fame, if you're curious), which you can access by
+opening the Start menu and searching for "IDLE" - it should be located
+in a folder called `Python 2.7`. You can use this tool to create Python
+scripts with inbuilt code highlighting and quickly run them and see the
+output, all from within the program. This is by far the easiest way to
+do things if you're new to this.
+
+However, if you want to play with terminals and other cool stuff like those
+crazy people running Mac OSX or Linux, then you can do it...
+
+##### The Hard Way
+
+Open command prompt by `Windows + R`, and typing `cmd` into the box that
+appears. Type `python` into the command prompt, and something like the
+following should appear:
+
+    Python 2.7.5 (default, May 15 2013, 22:44:16) [MSC v.1500 64 bit (AMD64)] on win
+    32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+
+If this appears, then you are ready to begin programming in Python! You can
+execute a saved script with the command `python name_of_script.py` after you've
+saved them in your text editor.
+
+If, instead, you find yourself with a message something like the following:
+
+    'python' is not recognized as an internal or external command,
+    operable program or batch file.
+
+something has gone wrong. If you're feeling brave, read on and fix it yourself,
+but feel free to ask a helper if this happens.
+
+If your computer can't find the program `python`, this is because it's not on
+what's known as the system's "path" - essentially where it looks for programs
+when you reference them by name with no full path to the file. On Windows Vista
+and 7 (and possibly 8), open Start, start typing `environm` until the option
+"Edit environment variables for your account" comes up. Select this, click the
+entry `PATH` in the box that opens up, then click `Edit`. Go to the start of
+this textbox and add `C:\Python27\;` - the location of your Python installation.
+If you chose to put it somewhere else in the installation, change this
+accordingly. **Make sure** that this entry and the rest of the textbox are
+separated by that `;` because if not things can and likely will break. This is
+**important**.
+
+There are some benefits to doing it this way - if in due course you find
+yourself needing to do some programming on a different operating system or
+in a different language where graphical tools aren't available, you'll find
+it much less of a shock to the system if you acclimatise yourself early.
+Aside from this, there's little difference between the two methods except that
+one is slightly easier and more centralised than the other.
