@@ -1,0 +1,34 @@
+ <ul>
+  <li>
+   [[map]] does broken things when handed non-toplevel pagespecs.
+  </li>
+  <li>
+   Special characters currently need to be escaped in tags.  I filed a bug, and
+the fix is in IkiWiki SVN.  When the next release comes, we'll have to
+un-manually escape the tags, hence why this fixme is still here.
+  </li>
+  <li>
+   A bunch of minuteses are missing!
+  </li>
+  <li>
+   Didn't bring across the Materials pages.
+  </li>
+  <li>
+   <p>
+    The orphans tag explodes on the pluses in the Beginners' C++ Course pages:
+   </p>
+   <blockquote>
+    <tt>
+     Nested quantifiers in regex; marked by &lt;-- HERE in m/^(Termcards/2004/Michaelmas/Week_6/Beginners__39___C++ &lt;-- HERE _Course:_Session_4|)$/ at /usr/share/perl5/IkiWiki/Plugin/orphans.pm line 34.
+     <br/>
+     BEGIN failed--compilation aborted at (eval 5) line 113.
+    </tt>
+   </blockquote>
+   <p>
+    I've disabled it for now.
+   </p>
+  </li>
+  <li>
+   invent a lowercase canonicalisation option and use it
+  </li>
+ </ul>

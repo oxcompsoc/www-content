@@ -1,0 +1,77 @@
+ <h1>
+  Oxford Computer Society URI Policy
+ </h1>
+ <p>
+  Version 1 -
+  <a href="./../../people/David_North/">
+   David North
+  </a>
+  , 26 October 2008
+ </p>
+ <h2>
+  Objectives
+ </h2>
+ <ol>
+  <li>
+   The URI for a resource should, as far as possible, never change.
+  </li>
+  <li>
+   URIs should be easy to infer, and 'clean'.
+  </li>
+  <li>
+   URIs should be chosen to avoid tying unrelated services to the same hostname.
+  </li>
+  <li>
+   Each resource should have only one URI.
+  </li>
+ </ol>
+ <h2>
+  Rules
+ </h2>
+ <ol>
+  <li>
+   Do not chose URIs with machine names in them. This makes it difficult to move services between machines and violates 1, 2 and 3.
+  </li>
+  <li>
+   URIs beginning www.ox.compsoc.net should be for resources which are part of the CompSoc website. Do
+   <em>
+    not
+   </em>
+   add random stuff under www, find a proper place for it (see below).
+  </li>
+  <li>
+   Do not be afraid to invent a new hostname under ox.compsoc.net if your resource does not logically fit under any of the existing ones.
+  </li>
+  <li>
+   URIs for web user directories (e.g. users.ox.compsoc.net/~username/) should be on the host 'users.ox.compsoc.net' for current students, and 'alumni.ox.compsoc.net' for alumni. They should
+   <em>
+    not
+   </em>
+   be under www.ox.compsoc.net.
+  </li>
+  <li>
+   When configuring web servers, please make sure URL paths do
+   <em>
+    not
+   </em>
+   accidentally work under multiple hostnames, as this violates objectives 3 and 4.
+  </li>
+  <li>
+   URIs for SVN repositories should use the HTTPS protocol,
+   <em>
+    not
+   </em>
+   svn+ssh or file. This avoids file permissions becoming messy (see
+   <a href="http://svnbook.red-bean.com/en/1.5/svn.serverconfig.choosing.html">
+    here
+   </a>
+   ).
+  </li>
+  <li>
+   Please consult the
+   <a href="./../system_administrators/">
+    sysadmin team
+   </a>
+   before making major changes or introducing a significant new family of URIs.
+  </li>
+ </ol>
