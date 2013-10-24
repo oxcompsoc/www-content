@@ -9,6 +9,10 @@ The website is powered by Python, a combination of
 library written by Sam Lanning (President 2013-2014) called wikilite. *(He
 intends to release it open-source once it is &quot;complete&quot; enough)*.
 
+The source content (markdown) for the website is publically available on github
+at this url:
+[github.com/oxcompsoc/www-content](https://github.com/oxcompsoc/www-content)
+
 Most of the old website pages are still available under the url
 [[/legacy|/legacy]], and any of the old URLS will redirect to here.
 
