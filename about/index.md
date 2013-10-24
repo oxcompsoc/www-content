@@ -23,6 +23,15 @@ Please address general comments or questions on Compsoc to the [[/committee]]
 network should be sent to our [[network/System_Administrators]]
 (<sysadmin@ox.compsoc.net>).
 
+## Our GitHub
+
+We have a [GitHub Profile](https://github.com/oxcompsoc) where we upload the
+content of our website. You can find out how our website works here:
+[[website]].
+
+We plan on hopefully increasing the number of public respositories on our
+GitHub profile over time, so keep watch!
+
 ## Find us on Facebook
 [embed page="facebook_links" /]
 
