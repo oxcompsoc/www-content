@@ -14,7 +14,7 @@ Anyone of any skill is welcome to come to the events (maybe you already know
 how to program but want to learn python, or think some of the talks will be
 interesting). And one last thing, **Remember to bring your laptop with you!**
 
-## Online Resources:
+## [[resources|Online Resources]]
 
 We have the content that will be covered in the course available online here:
 [[resources]].
