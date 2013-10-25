@@ -434,18 +434,14 @@ or even if you try a `list` as an index!
 
 
 
+## If Statements
 
-## Introduction to Booleans
+## While Statements
 
-### The `bool` type
+## The `bool` Type
 
+(explaining that they've already been using booleans)
 
-
-### Using Booleans to Make Desicions
-
-
-
-### Using Booleans in Loops
 
 
 
