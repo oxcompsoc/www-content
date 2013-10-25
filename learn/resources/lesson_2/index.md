@@ -98,6 +98,16 @@ the start and the end!**
     >>> type('hello!')
     <type 'str'>
 
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+  Experiment with using <code>type()</code> on different things. Try doing some
+  <strong>mathematical operations</strong> and working out the types of the
+  different results. Also see what happens when you mix <code>int</code> and
+  <code>float</code> values with maths operators.
+  </div>
+</div>
+
 ## Manipulating Values and Variables
 
 When writing programs, you will come accross the need to manipulate and combine
