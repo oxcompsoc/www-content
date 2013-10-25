@@ -181,10 +181,26 @@ or even if you try a `list` as an index!
 
 
 
+
+
+
 ## Understanding the `for` loop
 
 
 
+
+
+## Introduction to Booleans
+
+### The `bool` type
+
+
+
+### Using Booleans to Make Desicions
+
+
+
+### Using Booleans in Loops
 
 
 
