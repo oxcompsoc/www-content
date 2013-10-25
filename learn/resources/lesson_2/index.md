@@ -455,23 +455,4 @@ or even if you try a `list` as an index!
 
 
 
-## LEAVE TIL LAST!
 
-## How Different Programming Languages Handle Types and Variables
-
-Although this course uses python, it's aim is to teach you **general
-programming skills**, so that you will be able to much more easily go and learn
-another programming language or two, and understand the basic concepts needed
-to **get started very quickly**. Of course after the course has finished, you
-can learn more python if you prefer.
-
-Different programming languages do many things in many different ways, and
-throughout this course, we will try and point out differences that you may come
-accross with different programming languages. This will hopefully prepare you
-well for any language you wish to learn afterwards.
-
-### How Python Handles Types
-
-Python allows as to make a variable any type of value at any time, eg:
-
-    >>>
