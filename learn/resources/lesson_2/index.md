@@ -712,9 +712,9 @@ Resulting in something like this:
 After you've calculated the average percentage, what if you want to tell the
 user of your script whether they've passed or failed?
 
-To do this, you're going to need some way of changing the code that runs, based
-on the value of `avg_percent`. If `avg_percent >= 40` then they've passed
-(Hooray), otherwise, better luck next time.
+To do this, you're going to need some way of deciding which bit of the code,
+runs, based on the value of `avg_percent`. If `avg_percent >= 40` (greater than
+or equal to 40) then they've passed (Hooray), otherwise, better luck next time.
 
 Luckily, python's got you covered with an `if` statement, and it looks something
 like this:
@@ -728,14 +728,15 @@ Pretty simple, right?
 
 So, for us to tell people whether they've passed or failed, we need to check
 whether their average percent (`avg_percent`) is *greater than or equal to 40*.
-If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :(".
+If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :("`.
 
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
     Using the hints above, construct an <code>if</code> statement that prints
-    "Pass! :)" when their <code>avg_percent</code> is 40 or more, and "Fail. :("
-    otherwise.
+    "Pass! :)" when their <code>avg_percent</code> is 40 or more, and
+    "Fail. :(" otherwise. You want to add this to the end of the code you
+    already have.
   </div>
 </div>
 
@@ -787,7 +788,9 @@ conditions, they must have failed, so you must `print "Fail."` as before.
 ## While Statements
 
 We have met the `for` loop before, and seen that it is useful for traversing
-lists of things.
+lists of things. *(i.e. it will run a number of times that we have already
+decided before starting the loop)*
+
 
 The `while` statement is also similar: it is a kind of loop, and it looks a bit
 like this:
@@ -798,9 +801,9 @@ like this:
 So it keeps looping through its body, until its condition (`this_is_true`) no
 longer holds.
 
-As you may have guessed, this means that `keep_doing_this()` should probably
-change something to make sure that `this_is_true` stops being true, otherwise,
-the loop will go on forever (in general, not good...).
+This means that `keep_doing_this()` should probably change something to make
+sure that `this_is_true` stops being true, otherwise, the loop will go on
+forever (in general, not good...).
 
 As a concrete example, here is the `for` loop from earlier, that prints out the
 numbers from 0 to 5, but this time as a `while` loop:
@@ -819,18 +822,13 @@ Which outputs the following when run (same as before):
     4
     5
 
-**Note:** You may not have seen the notation `count = count + 1` before, but it
-is fairly common in programming, and it means "count *becomes* count + 1", as
-opposed to being an equivalence (like in maths), because obviously, if the
-latter were the case, we could subtract `count` from both sides and be left with
-`0 = 1`.
-
 As you can see, the body of the `while` loop does something to bring the
 condition (in this case `count < 6`) closer to being false at every iteration,
 by increasing the value of `count` by 1 (also called incremeneting `count`).
 
-So if `while` loops are the same as `for` loops, except with the added pain that
-you have to watch that they don't go on forever, then what's the point of them?
+So if `while` loops are the same as `for` loops, except with the added pain
+that you have to watch that they don't go on forever, then what's the point of
+them?
 
 Well, consider this: What if you are creating a list, and you don't know how
 many items are going to go in it? You couldn't use a `for` loop because you
@@ -853,18 +851,22 @@ With this:
     courses    = []
     prev_input = BLANK_1
 
-    while prev_input != BLANK_2:
+    while prev_input != BLANK_2: # This means "while prev_input is not equal to BLANK_2"
         prev_input = raw_input()
         courses.append(prev_input)
 
+Note, we have so far used two different [[../definitions/operators|operators]]
+inside [[../definitions/conditions|conditions]] for `if` statements and `while`
+statements: "`>=`", "`<`" and "`!=`", but there are a lot more! We'll cover
+these after this next task!
 
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
     <p>
-    Fill in the blanks in the code listing above to make the while loop work
-    as described. Then, print the <code>courses</code> list at the end to ensure
-    that it contains exactly the elements you expected.
+    Replace <code>BLANK_1</code> and <code>BLANK_2</code> above to make the
+    while loop work as described. Then, print the <code>courses</code> list at
+    the end to ensure that it contains exactly the elements you expected.
     </p>
     <p>
     <strong>Hint 1</strong> we need to fill <code>prev_input</code> with
@@ -885,9 +887,73 @@ you want a `for` loop, and otherwise, you may want to consider a `while` loop.
 
 ## The `bool` Type
 
-(explaining that they've already been using booleans)
+In the last two sections, we have actually been using a new type of value, the
+`bool` type (short for boolean, a "truth value"). If something is a `bool`
+type, it is always either `True` or `False`.
 
+Open up your interpreter in **interactive mode** by typing `python` and hitting
+`Enter`.
 
+Lets inspect the two values `True` and `False`:
+
+    >>> True
+    True
+    >>> type(True)
+    <type 'bool'>
+    >>> False
+    False
+    >>> type(False)
+    <type 'bool'>
+
+**Note: notice how we're using capital letters with these values, remember
+python is case sensitive!**
+
+Above when we were using the `<=` and `!=` operators in the `if` and `where`
+statements, we were actually creating `bool` values! Lets see what happens when
+we inspect these operators in interactive mode:
+
+    >>> 1 < 5
+    True
+    >>> 1 > 5
+    False
+    >>> 5 < 1
+    False
+    >>> 5 != 1
+    True
+    >>> "fish" != "dog"
+    True
+    >>> "fish" != "fish"
+    False
+
+These two operators are actually called **comparison operators**. Here are a
+list of some of the most important ones:
+
+    <   # Strictly less than
+    <=  # Less than or equal to
+    >   # Strictly greater than
+    >=  # Greater than or equal to
+    ==  # Equal to
+    !=  # Not equal to
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+      Using these operators, experiment in the interpreter with different
+      comparisons of different variables:
+    </p>
+    <ul>
+      <li>
+        Use lots of different types, mix together <code>int</code>,
+        <code>float</code>, <code>str</code> and <code>list</code> values and
+        see what happens.
+      </li>
+      <li>
+        Create some variables too, and do comparisons on variables
+      </li>
+    <ul>
+  </div>
+</div>
 
 
 
