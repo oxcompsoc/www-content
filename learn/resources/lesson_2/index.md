@@ -707,6 +707,8 @@ Resulting in something like this:
 
 ## If Statements
 
+### Making Decisions
+
 After you've calculated the average percentage, what if you want to tell the
 user of your script whether they've passed or failed?
 
@@ -736,6 +738,8 @@ If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :(".
     otherwise.
   </div>
 </div>
+
+### Multiple Choice: `elif`
 
 But what if we want to go into a bit more detail? Our users probably want to
 know whether or not they got a 3rd, 2nd, 2-1, or 1st.
