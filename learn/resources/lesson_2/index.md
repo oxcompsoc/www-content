@@ -738,7 +738,7 @@ If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :(".
 </div>
 
 But what if we want to go into a bit more detail? Our users probably want to
-know whether or not they got a Third, Second, Higher Second, or First.
+know whether or not they got a 3rd, 2nd, 2-1, or 1st.
 
 To do this, we will need to branch more than once, which you can do like this,
 by putting an `if` inside another `if`'s `else` block:
@@ -767,9 +767,9 @@ Much neater! And now, the more conditions you have, we won't end up with our
 code drifting towards the right side of the screen.
 
 So, if our user has an `avg_percent` that is *greater than or equal to 70* we
-will `print "First."` *el*se *if* their `avg_percent` is *greater than or equal
-to 60* we `print "Higher Second."` (...and so on for `50` and `"Second."` and
-`40` and `"Third."`). Finally, if their `avg_percent` doesn't pass any of the previous
+will `print "1st"` *el*se *if* their `avg_percent` is *greater than or equal
+to 60* we `print "2-1"` (...and so on for `50` and `"2nd"` and `40` and
+`"3rd"`). Finally, if their `avg_percent` doesn't pass any of the previous
 conditions, they must have failed, so you must `print "Fail."` as before.
 
 <div class="panel panel-primary">
