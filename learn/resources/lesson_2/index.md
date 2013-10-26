@@ -707,7 +707,181 @@ Resulting in something like this:
 
 ## If Statements
 
+### Making Decisions
+
+After you've calculated the average percentage, what if you want to tell the
+user of your script whether they've passed or failed?
+
+To do this, you're going to need some way of changing the code that runs, based
+on the value of `avg_percent`. If `avg_percent >= 40` then they've passed
+(Hooray), otherwise, better luck next time.
+
+Luckily, python's got you covered with an `if` statement, and it looks something
+like this:
+
+    if this_is_true:
+        do_this()
+    else:
+        do_this_other_thing()
+
+Pretty simple, right?
+
+So, for us to tell people whether they've passed or failed, we need to check
+whether their average percent (`avg_percent`) is *greater than or equal to 40*.
+If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :(".
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    Using the hints above, construct an <code>if</code> statement that prints
+    "Pass! :)" when their <code>avg_percent</code> is 40 or more, and "Fail. :("
+    otherwise.
+  </div>
+</div>
+
+### Multiple Choice: `elif`
+
+But what if we want to go into a bit more detail? Our users probably want to
+know whether or not they got a 3rd, 2nd, 2-1, or 1st.
+
+To do this, we will need to branch more than once, which you can do like this,
+by putting an `if` inside another `if`'s `else` block:
+
+    if condition1:
+        do_this()
+    else:
+        if condition2:
+            do_something_else()
+        else:
+            do_this_other_thing()
+
+But that's a bit cumbersome, especially when you have to branch 3 times, like we
+will have to. So, python has something called `elif`, which is short for the
+`else` and `if` in the previous example. So if we were to rewrite the previous
+example using `elif` we would get:
+
+    if condition1:
+        do_this()
+    elif condition2:
+        do_something_else()
+    else:
+        do_this_other_thing()
+
+Much neater! And now, the more conditions you have, we won't end up with our
+code drifting towards the right side of the screen.
+
+So, if our user has an `avg_percent` that is *greater than or equal to 70* we
+will `print "1st"` *el*se *if* their `avg_percent` is *greater than or equal
+to 60* we `print "2-1"` (...and so on for `50` and `"2nd"` and `40` and
+`"3rd"`). Finally, if their `avg_percent` doesn't pass any of the previous
+conditions, they must have failed, so you must `print "Fail."` as before.
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    Modify your <code>if</code> statement from before to print out the grade
+    according to the percent, as described above.
+  </div>
+</div>
+
 ## While Statements
+
+We have met the `for` loop before, and seen that it is useful for traversing
+lists of things.
+
+The `while` statement is also similar: it is a kind of loop, and it looks a bit
+like this:
+
+    while this_is_true:
+        keep_doing_this()
+
+So it keeps looping through its body, until its condition (`this_is_true`) no
+longer holds.
+
+As you may have guessed, this means that `keep_doing_this()` should probably
+change something to make sure that `this_is_true` stops being true, otherwise,
+the loop will go on forever (in general, not good...).
+
+As a concrete example, here is the `for` loop from earlier, that prints out the
+numbers from 0 to 5, but this time as a `while` loop:
+
+    count = 0
+    while count < 6:
+        print count
+        count = count + 1
+
+Which outputs the following when run (same as before):
+
+    0
+    1
+    2
+    3
+    4
+    5
+
+**Note:** You may not have seen the notation `count = count + 1` before, but it
+is fairly common in programming, and it means "count *becomes* count + 1", as
+opposed to being an equivalence (like in maths), because obviously, if the
+latter were the case, we could subtract `count` from both sides and be left with
+`0 = 1`.
+
+As you can see, the body of the `while` loop does something to bring the
+condition (in this case `count < 6`) closer to being false at every iteration,
+by increasing the value of `count` by 1 (also called incremeneting `count`).
+
+So if `while` loops are the same as `for` loops, except with the added pain that
+you have to watch that they don't go on forever, then what's the point of them?
+
+Well, consider this: What if you are creating a list, and you don't know how
+many items are going to go in it? You couldn't use a `for` loop because you
+don't know what to give it as the range, but you could use a `while` loop
+instead, and check whether the user has typed in `"STOP"` last time.
+
+To illustrate this, let us allow the user to input which courses they wish to
+calculate their grades for, rather than using the preset list we have been using
+so far.
+
+In your `results_calculator.py` script, replace:
+
+    courses = ["Learn to Cook",
+               "Learn to Code",
+               "Learn to Dance"
+              ]
+
+With this:
+
+    courses    = []
+    prev_input = BLANK_1
+
+    while prev_input != BLANK_2:
+        prev_input = raw_input()
+        courses.append(prev_input)
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+    Fill in the blanks in the code listing above to make the while loop work
+    as described. Then, print the <code>courses</code> list at the end to ensure
+    that it contains exactly the elements you expected.
+    </p>
+    <p>
+    <strong>Hint 1</strong> we need to fill <code>prev_input</code> with
+    something to begin with, so that when the <code>while</code> loop starts,
+    it has something to check its condition with.
+    </p>
+    <p>
+    <strong>Hint 2</strong> we had decided that if the user inputted
+    <code>"STOP"</code>, then we would stop the loop.
+  </div>
+</div>
+
+Practically speaking, `while` loops can do everything that `for` loops can do
+and vice versa too, but you don't need to know the ins and outs of them just
+yet. It's a fairly good rule of thumb that if you want to go through the items
+of some collection (a range of numbers, a list and later on dictionaries), then
+you want a `for` loop, and otherwise, you may want to consider a `while` loop.
 
 ## The `bool` Type
 
