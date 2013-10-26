@@ -739,14 +739,21 @@ module scores between 0 and 100, then we can tell them what their average was.
 Try writing the code youself, but if you get stuck then use the copy below 
 for reference.
 
-    print "Welcome to the Results Calculator"s
-    score1 = int(raw_input("Please enter your first module score between 0 and 100: "))
-    score2 = int(raw_input("Please enter your second module score between 0 and 100: "))
-    score3 = int(raw_input("Please enter your thrid module score between 0 and 100: "))
-    average = (score1 + score2 + score3) / 3
-    print "Your average was " + average
+    print "Welcome to the Results Calculator"
+    scores = ["first","second","third"]
+    total = 0
+    for number in scores:
+        score = int(raw_input("Please enter the " + str(number) + " module score between 0 and 100: "))
+        total = total + score
+
+avg_percent = total / len(scores)
+print "Your average was " + str(avg_percent)
+
 
 Awesome, now try out your program a few times. What happens if you don't enter a number?
+Now you might be a bit confused by the line `total = total + score`. Have we broken mathematics?
+Actually no! This simply says "add the value of score to total", and so by doing this, we keep a 
+running total of the module scores.
 
 ## If Statements
 
