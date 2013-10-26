@@ -786,6 +786,103 @@ conditions, they must have failed, so you must `print "Fail."` as before.
 
 ## While Statements
 
+We have met the `for` loop before, and seen that it is useful for traversing
+lists of things.
+
+The `while` statement is also similar: it is a kind of loop, and it looks a bit
+like this:
+
+    while this_is_true:
+        keep_doing_this()
+
+So it keeps looping through its body, until its condition (`this_is_true`) no
+longer holds.
+
+As you may have guessed, this means that `keep_doing_this()` should probably
+change something to make sure that `this_is_true` stops being true, otherwise,
+the loop will go on forever (in general, not good...).
+
+As a concrete example, here is the `for` loop from earlier, that prints out the
+numbers from 0 to 5, but this time as a `while` loop:
+
+    count = 0
+    while count < 6:
+        print count
+        count = count + 1
+
+Which outputs the following when run (same as before):
+
+    0
+    1
+    2
+    3
+    4
+    5
+
+**Note:** You may not have seen the notation `count = count + 1` before, but it
+is fairly common in programming, and it means "count *becomes* count + 1", as
+opposed to being an equivalence (like in maths), because obviously, if the
+latter were the case, we could subtract `count` from both sides and be left with
+`0 = 1`.
+
+As you can see, the body of the `while` loop does something to bring the
+condition (in this case `count < 6`) closer to being false at every iteration,
+by increasing the value of `count` by 1 (also called incremeneting `count`).
+
+So if `while` loops are the same as `for` loops, except with the added pain that
+you have to watch that they don't go on forever, then what's the point of them?
+
+Well, consider this: What if you are creating a list, and you don't know how
+many items are going to go in it? You couldn't use a `for` loop because you
+don't know what to give it as the range, but you could use a `while` loop
+instead, and check whether the user has typed in `"STOP"` last time.
+
+To illustrate this, let us allow the user to input which courses they wish to
+calculate their grades for, rather than using the preset list we have been using
+so far.
+
+In your `results_calculator.py` script, replace:
+
+    courses = ["Learn to Cook",
+               "Learn to Code",
+               "Learn to Dance"
+              ]
+
+With this:
+
+    courses    = []
+    prev_input = BLANK_1
+
+    while prev_input != BLANK_2:
+        prev_input = raw_input()
+        courses.append(prev_input)
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+    Fill in the blanks in the code listing above to make the while loop work
+    as described. Then, print the <code>courses</code> list at the end to ensure
+    that it contains exactly the elements you expected.
+    </p>
+    <p>
+    <strong>Hint 1</strong> we need to fill <code>prev_input</code> with
+    something to begin with, so that when the <code>while</code> loop starts,
+    it has something to check its condition with.
+    </p>
+    <p>
+    <strong>Hint 2</strong> we had decided that if the user inputted
+    <code>"STOP"</code>, then we would stop the loop.
+  </div>
+</div>
+
+Practically speaking, `while` loops can do everything that `for` loops can do
+and vice versa too, but you don't need to know the ins and outs of them just
+yet. It's a fairly good rule of thumb that if you want to go through the items
+of some collection (a range of numbers, a list and later on dictionaries), then
+you want a `for` loop, and otherwise, you may want to consider a `while` loop.
+
 ## The `bool` Type
 
 (explaining that they've already been using booleans)
