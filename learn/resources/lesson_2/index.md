@@ -937,13 +937,49 @@ you want a `for` loop, and otherwise, you may want to consider a `while` loop.
 
 (explaining that they've already been using booleans)
 
+## Functions
 
+Start by typing to following into your text editor:
 
+    def sayhi():
+        print "hi"
 
+    sayhi()
+    sayhi()
 
+Interesting! We just defined a "function" called "sayhi", 
+you can call a function by using its name followed by 
+parantheses, in this case `sayhi()`
+Lets try another!
 
+    def absolute(x):
+        if(x>0):
+            return x
+        else:
+            return -x
 
+    print absolute(5)
+    print absolute(-5)
 
+This function, called "absolute" takes a parameter x.
+When the function is called, e.g. `absolute(5)` then 
+the occurence of x in replaced by the value 5, and the 
+function is executed.
+It turns out that functions are in fact not new, you've 
+been using loads of them! `print`, `len`, `raw_input`, 
+`range`, and even `turtle.right` are all functions!
+Functions are a really useful way of taking a chunk of 
+code, giving it a name, and making it re-useable.
+Lets finish with one more function, try this one:
 
+    def max(x,y):
+        if(x>y):
+            return x;
+        else:
+            return y;
 
+    print max(5,6)
 
+As an extra challenge, can you create a function called 
+max_array which takes in an array of ints, and returns the 
+largest int in the array. Hint: use a for loop!
