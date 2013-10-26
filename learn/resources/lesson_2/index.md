@@ -713,8 +713,8 @@ After you've calculated the average percentage, what if you want to tell the
 user of your script whether they've passed or failed?
 
 To do this, you're going to need some way of changing the code that runs, based
-on the value of `grade`. If `avg_percent >= 40` then they've passed (Hooray),
-otherwise, better luck next time.
+on the value of `avg_percent`. If `avg_percent >= 40` then they've passed
+(Hooray), otherwise, better luck next time.
 
 Luckily, python's got you covered with an `if` statement, and it looks something
 like this:
