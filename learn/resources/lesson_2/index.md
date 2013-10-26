@@ -698,12 +698,55 @@ Resulting in something like this:
     Learn to Dance
 
 
+## User Input
 
-## TODO:
+Last lesson we wrote `raw_input()` to prevent our programs from terminating 
+immediately. It turns out that it is also possible to write:
 
-* User Input (accept percentages of course)
-* Calculate Average (save as variable
+    yourname = raw_input("What is your name?")
+    print "Hi " + yourname
 
+What do you think will happen here?
+
+You should find that when you run your code, the program will pause at the `raw_input` 
+line, waiting for user input. If you type in some text and then hit `Enter`, 
+you'll see that the program will greet you!
+
+Basically, raw_input is able to take a string as a parameter which will be used 
+to prompt the user, and then it returns a string which we can assign to a variable.
+
+But watch out! What is wrong with the following code?
+
+    number = raw_input("Please enter a number")
+    new_number = number + 5
+    print new_number
+
+So because raw_input returns a string, we can't just start treating it like a 
+int! We'll need to convert it, do you remeber how to do that? Yup, you'd need
+to write:
+
+    number = int(raw_input("Please enter a number"))
+    new_number = number + 5
+    print new_number
+
+
+This is good, but have you noticed how there is no space after the prompt 
+for you to then enter the number? We can fix that by adding a final space 
+to the string we put into raw_input. So rather than `"Please enter a number"`, put `"Please enter a number "`.
+
+Great, now lets put this together and make our program ask the user for some 
+module scores between 0 and 100, then we can tell them what their average was.
+Try writing the code youself, but if you get stuck then use the copy below 
+for reference.
+
+    print "Welcome to the Results Calculator"s
+    score1 = int(raw_input("Please enter your first module score between 0 and 100: "))
+    score2 = int(raw_input("Please enter your second module score between 0 and 100: "))
+    score3 = int(raw_input("Please enter your thrid module score between 0 and 100: "))
+    average = (score1 + score2 + score3) / 3
+    print "Your average was " + average
+
+Awesome, now try out your program a few times. What happens if you don't enter a number?
 
 ## If Statements
 
