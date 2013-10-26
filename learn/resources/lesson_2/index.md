@@ -700,7 +700,7 @@ Resulting in something like this:
 
 ## User Input
 
-Last lesson we wrote `raw_input()` to prevent our programs from terminating 
+Last lesson we wrote `raw_input()` to prevent our programs from terminating
 immediately. It turns out that it is also possible to write:
 
     yourname = raw_input("What is your name?")
@@ -708,12 +708,13 @@ immediately. It turns out that it is also possible to write:
 
 What do you think will happen here?
 
-You should find that when you run your code, the program will pause at the `raw_input` 
-line, waiting for user input. If you type in some text and then hit `Enter`, 
-you'll see that the program will greet you!
+You should find that when you run your code, the program will pause at the
+`raw_input` line, waiting for user input. If you type in some text and then hit
+`Enter`, you'll see that the program will greet you!
 
-Basically, raw_input is able to take a string as a parameter which will be used 
-to prompt the user, and then it returns a string which we can assign to a variable.
+Basically, `raw_input` is able to take a string as a parameter which will be
+used to prompt the user, and then it returns a string which we can assign to a
+variable.
 
 But watch out! What is wrong with the following code?
 
@@ -721,39 +722,74 @@ But watch out! What is wrong with the following code?
     new_number = number + 5
     print new_number
 
-So because raw_input returns a string, we can't just start treating it like a 
-int! We'll need to convert it, do you remeber how to do that? Yup, you'd need
-to write:
+So because `raw_input` returns a string, we can't just start treating it like
+an `int`! We'll need to convert it, do you remeber how to do that?
+
+You'd need to write:
 
     number = int(raw_input("Please enter a number"))
     new_number = number + 5
     print new_number
 
+This is good, but have you noticed how there is no space after the prompt for
+you to then enter the number? When you start typing, the text you are writing
+appears right next to the string we gave `raw_input`, this looks messy, so we
+can fix that by adding a final space to the string we give `raw_input`. So
+rather than `"Please enter a number"`, put `"Please enter a number "`.
 
-This is good, but have you noticed how there is no space after the prompt 
-for you to then enter the number? We can fix that by adding a final space 
-to the string we put into raw_input. So rather than `"Please enter a number"`, put `"Please enter a number "`.
 
-Great, now lets put this together and make our program ask the user for some 
-module scores between 0 and 100, then we can tell them what their average was.
-Try writing the code youself, but if you get stuck then use the copy below 
-for reference.
+Great, now lets put this together and make our program ask the user for some
+course scores between 0 and 100, then we can tell them what their average was.
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+      Now that we know how to take user input and convert it into an integer,
+      we can do this once for every course if we put it in the `for` loop we
+      wrote earlier. Try and do this yourself, but if you get stuck, there is
+      working code below that you can copy.
+    </p>
+    <p><strong>Hints:</strong></p>
+    <ul>
+      <li>
+        We want to keep a total score so far, and then add to it for each
+        course inside the loop. We can then divide this number by the total
+        number of courses to obtain the average. You will want to keep this
+        number in a variable <strong>outside</strong> of the foor loop.
+      </li>
+      <li>
+        You can find out the total number of courses in the list `courses` by
+        using `len(courses)`
+      </li>
+    </ul>
+  </div>
+</div>
+
+Here's a working answer for the task:
 
     print "Welcome to the Results Calculator"
-    scores = ["first","second","third"]
-    total = 0
-    for number in scores:
-        score = int(raw_input("Please enter the " + str(number) + " module score between 0 and 100: "))
+
+    print ""
+
+    courses = ["Learn to Cook",
+               "Learn to Code",
+               "Learn to Dance"
+               ]
+
+    total = 0.0
+
+    for course in courses:
+
+        prompt = "Please enter your mark for " + course + " as a number between 0 and 100: "
+        score = float(raw_input(prompt))
         total = total + score
 
-avg_percent = total / len(scores)
-print "Your average was " + str(avg_percent)
+    avg_percent = total / len(courses)
+    print "Your average percent was " + str(avg_percent) + "%"
 
-
-Awesome, now try out your program a few times. What happens if you don't enter a number?
-Now you might be a bit confused by the line `total = total + score`. Have we broken mathematics?
-Actually no! This simply says "add the value of score to total", and so by doing this, we keep a 
-running total of the module scores.
+Awesome, now try out your program a few times. What happens if you don't enter
+a number?
 
 ## If Statements
 
