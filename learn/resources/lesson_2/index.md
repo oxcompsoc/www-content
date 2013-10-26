@@ -707,6 +707,79 @@ Resulting in something like this:
 
 ## If Statements
 
+After you've calculated the average percentage, what if you want to tell the
+user of your script whether they've passed or failed?
+
+To do this, you're going to need some way of changing the code that runs, based
+on the value of `grade`. If `avg_percent >= 40` then they've passed (Hooray),
+otherwise, better luck next time.
+
+Luckily, python's got you covered with an `if` statement, and it looks something
+like this:
+
+    if this_is_true:
+        do_this()
+    else:
+        do_this_other_thing()
+
+Pretty simple, right?
+
+So, for us to tell people whether they've passed or failed, we need to check
+whether their average percent (`avg_percent`) is *greater than or equal to 40*.
+If it is, we shall `print "Pass! :)"`, otherwise we will `print "Fail. :(".
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    Using the hints above, construct an <code>if</code> statement that prints
+    "Pass! :)" when their <code>avg_percent</code> is 40 or more, and "Fail. :("
+    otherwise.
+  </div>
+</div>
+
+But what if we want to go into a bit more detail? Our users probably want to
+know whether or not they got a Third, Second, Higher Second, or First.
+
+To do this, we will need to branch more than once, which you can do like this,
+by putting an `if` inside another `if`'s `else` block:
+
+    if condition1:
+        do_this()
+    else:
+        if condition2:
+            do_something_else()
+        else:
+            do_this_other_thing()
+
+But that's a bit cumbersome, especially when you have to branch 3 times, like we
+will have to. So, python has something called `elif`, which is short for the
+`else` and `if` in the previous example. So if we were to rewrite the previous
+example using `elif` we would get:
+
+    if condition1:
+        do_this()
+    elif condition2:
+        do_something_else()
+    else:
+        do_this_other_thing()
+
+Much neater! And now, the more conditions you have, we won't end up with our
+code drifting towards the right side of the screen.
+
+So, if our user has an `avg_percent` that is *greater than or equal to 70* we
+will `print "First."` *el*se *if* their `avg_percent` is *greater than or equal
+to 60* we `print "Higher Second."` (...and so on for `50` and `"Second."` and
+`40` and `"Third."`). Finally, if their `avg_percent` doesn't pass any of the previous
+conditions, they must have failed, so you must `print "Fail."` as before.
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    Modify your <code>if</code> statement from before to print out the grade
+    according to the percent, as described above.
+  </div>
+</div>
+
 ## While Statements
 
 ## The `bool` Type
