@@ -43,5 +43,6 @@ The content of this course has been inspired by the brilliant resources
 available from [CodeClub.org.uk](https://www.codeclub.org.uk/about).
 
 The course itself (and the resources you see before you) have been written and
-maintained by [Sam Lanning (President 2013-2014)](http://samlanning.com) with
-help from [Elliot Prior (Gaming Officer 2013-2014)](http://quogu.com).
+maintained by [Sam Lanning (President 2013-2014)](http://samlanning.com) and
+[Ashok Menon](https://github.com/asQuirreL) with help from
+[Elliot Prior (Gaming Officer 2013-2014)](http://quogu.com).
