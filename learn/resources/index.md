@@ -10,16 +10,19 @@ here.**
 
 ## Content covered in sessions so far:
 
-We have not had any sessions yet, so you do not need to catch up on any of the
-content. You do not need to have done any research or **anything** beforehand.
-
-## Content that is yet to be covered:
+If you haven't been attending our sessions, or are behind, don't worry. You can
+come along and work from the start, or from where you currently are. Helpers
+will be available to come around and help you when you get there!
 
 ### [[lesson_0]]
 
 ### [[lesson_1]]
 
 ### [[lesson_2]]
+
+## Content that is yet to be covered:
+
+### [[lesson_3]]
 
 ## Learn out-side of our course
 
@@ -43,6 +46,7 @@ The content of this course has been inspired by the brilliant resources
 available from [CodeClub.org.uk](https://www.codeclub.org.uk/about).
 
 The course itself (and the resources you see before you) have been written and
-maintained by [Sam Lanning (President 2013-2014)](http://samlanning.com) and
-[Ashok Menon](https://github.com/asQuirreL) with help from
+maintained by [Sam Lanning (President 2013-2014)](http://samlanning.com),
+[Ashok Menon](https://github.com/asQuirreL) and
+[James Thompson](https://github.com/JamesHub) with help from
 [Elliot Prior (Gaming Officer 2013-2014)](http://quogu.com).
