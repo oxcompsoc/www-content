@@ -16,7 +16,7 @@ print ""
 
 
 ############################
-# Game Data (Doesn't Change)
+# Game Data
 
 locations = {
     "The Town Square": {
@@ -24,7 +24,8 @@ locations = {
                         "the middle and you're surrounded by trees!"),
         "neighbors": {
             "S": "The Town South Gate",
-            "N": "The Town Hall Entrance"
+            "N": "The Town Hall Entrance",
+            "E": "The Town Jail"
         }
     },
     "The Town South Gate": {
@@ -43,7 +44,20 @@ locations = {
     "The Town Hall": {
         "description": "Nothing interesting going on in here...",
         "neighbors": {
-            "S": "The Town Hall Entrance",
+            "S": "The Town Hall Entrance"
+        }
+    },
+    "The Town Jail": {
+        "description": "There's some nasty people in here.",
+        "neighbors": {
+            "W": "The Town Square",
+            "E": "Jail Cell"
+        }
+    },
+    "Jail Cell": {
+        "description": "...",
+        "neighbors": {
+            "W": "The Town Jail"
         }
     }
 }
@@ -57,10 +71,6 @@ compas = {
     'W': 'West'
 }
 
-
-##########################
-# Game State (Does Change)
-
 player = {
     "location": "The Town Square"
 }
@@ -73,7 +83,8 @@ def cmd_help():
         "help": "Show this help Page",
         "quit": "Quit the game",
         "go": "Walk either N, E, S or W, e.g: 'go N'",
-        "describe": "Descript the current location"
+        "describe": "Descript the current location",
+        "look": "Take a look at what's around you"
     }
 
     print "Available Commands:"
@@ -123,6 +134,22 @@ def cmd_go(cmd):
         cmd_describe()
 
 
+def cmd_look():
+
+    # Current Location
+    cmd_describe()
+
+    # The dictionary of neighbors for our current location
+    neighbors = locations[player["location"]]['neighbors']
+
+    if len(neighbors) == 0:
+        print "You can't go anywhere from here!"
+    else:
+        print "Where you can go from here:"
+        for direction, location in neighbors.items():
+            print "  " + direction + ": " + location
+
+
 ############
 # Start Game
 
@@ -154,6 +181,8 @@ while True:
             cmd_go(cmd)
         elif cmd[0] == 'describe':
             cmd_describe()
+        elif cmd[0] == 'look':
+            cmd_look()
         else:
             print "Unknown Command: '" + cmd[0] + "'"
             cmd_help()
