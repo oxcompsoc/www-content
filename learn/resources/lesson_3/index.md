@@ -19,13 +19,11 @@
 
 #### Function Arguments
 
+#### Talk about how they've been using them the whole time, and give examples
+
 #### Functions have their own variables
 
 (talk about function scope)
-
-#### Changing variables outside a function (maybe?)
-
-(this is less of a generic programming feature, using the `global` keyword)
 
 ## Let's Start Making a Game
 
@@ -45,8 +43,23 @@
 
 (introduce the idea of the `new_location(direction)` function)
 
+### Tasks
 
+#### Implement the `new_location()` function
 
+(may want to reorder these, definitely want to add more)
+
+#### Add lots of new locations, and experiment moving around in your game
+
+#### Adding objects at locations
+
+e.g:
+
+* Chests
+
+#### Interacting with objects
+
+#### Adding Monsters into the mix
 
 
 
