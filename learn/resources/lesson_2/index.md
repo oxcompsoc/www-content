@@ -2,12 +2,6 @@
 
 [embed page="/learn/resources/highlight.js/embed" /]
 
-Personal note of things that need to be covered:
-
-* types
-* conditionals (`if`, `while`)
-* user input (in particular the `raw_input()` function
-
 Now that you have had some exposure to python, and have got a feel for what a
 program might look like (after writing your own `.py` scripts), we're going to
 look in more detail at some of the things we have written, and introduce some
