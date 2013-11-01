@@ -7,8 +7,6 @@ it only uses techniques that have been taught thus far. In addition, standard
 coding practices have been dropped in favour of making understandable code for
 people who have been following our course from the start, up until this point.
 
-Created by Sam Lanning: http://samlanning.com
-
 """
 
 
