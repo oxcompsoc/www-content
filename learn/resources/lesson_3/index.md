@@ -217,7 +217,7 @@ way?).
 Your game is up and running now, but not really playable. You can't really do
 anything other than quit, so we should change that by adding some nice features.
 
-#### `describe`
+#### The `describe` command
 
 Currently you're playing blind. The game doesn't tell you where you are, or what
 it looks like, so we should change that. Before we ask the player what they want
@@ -272,7 +272,7 @@ twice in succession, try it for yourself to verify).
   </div>
 </div>
 
-#### `help`
+#### The `help` command
 
 Now we can see where we're going! But players don't know what they can do, so
 let us tell them with a `help` command. Whenever they type `help` into the game
@@ -307,7 +307,7 @@ Once again, we add a function under the `# Functions` heading:
   </div>
 </div>
 
-#### `go`
+#### The `go` command
 
 You may have noticed we were a bit pre-emptive when we defined the `help`
 command: We told people there is a `go` command, but we haven't provided one
