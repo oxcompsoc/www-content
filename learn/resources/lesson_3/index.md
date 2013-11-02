@@ -419,7 +419,7 @@ which was the description if we could underline the name in some way.
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
     <p>
-      print a line of <code>=</code> signs as long as the name, underneath
+      Print a line of <code>=</code> signs as long as the name, underneath
       the name of the location in the <code>describe()</code> function.
     </p>
     <p>
