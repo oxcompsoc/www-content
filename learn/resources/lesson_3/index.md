@@ -227,7 +227,7 @@ should be able to ask the game to `describe` their current location.
 
 Firstly, we will add a function, under the `# Functions` comment:
 
-    describe(loc_name, locs):
+    def describe(loc_name, locs):
         location = locs[loc_name]
         BLANK_1
 
