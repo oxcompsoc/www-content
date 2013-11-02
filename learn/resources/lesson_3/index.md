@@ -172,6 +172,26 @@ Start by typing to following into your text editor, then run it in python:
 We just defined a "function" called `sayhi`. You can call a function by using
 its name followed by parentheses. In this case, it's `sayhi()`.
 
+Just like with loops, here the indentation is important. The "body" of the
+function is all the code indented to the right immediately below the function
+name.
+
+So what is going on in the above example?
+
+Well, the first two lines are simply *defining* a function. That means that the
+`print "hi"` does not actually happen. Python just knows that when you type
+`sayhi()` then, it should print the message `"hi"`.
+
+Then the following two `sayhi()`s are where the message actually gets printed.
+Every time python sees a function name followed by brackets, it looks for that
+function's definition, runs it in the name's position, and then continues
+running the code after the function name.
+
+If this seems complicated, just imagine that when python sees a function name,
+it puts the code of the function definition in its place and runs that instead.
+That is basically what happens, but as you will see in the "Variable Scoping"
+section, there are some more things to take into account.
+
 In this example you can see one of the advantages of functions straight away: We
 wrote the code once, but we can use it however many times we want. This means if
 that code were to change, and we had used it in multiple places, rather than
@@ -181,10 +201,10 @@ everywhere the function is used will now be using the changed code.
 
 #### Introducing parameters
 
-Lets see a slightly different function:
+Lets look at a slightly different function:
 
     def absolute(x):
-        if(x>0):
+        if(x > 0):
             return x
         else:
             return -x
@@ -195,51 +215,57 @@ Lets see a slightly different function:
     print absolute(-5)
     # => 5
 
-
 This function, called `absolute` takes a parameter `x`. When the function is
 called, for example with  `absolute(5)`, then `x` is assigned the value `5`, and
-the function is run from top to bottom. Just like with loops, here the
-indentation is important, so the "body" of the function is all the code indented
-to the right immediately below the function definition (which is the line which
-says `def absolute(x):`). This function also introduced the `return` keyword,
-which lets a function stop executing immediately, and return a result to the
-code that initially called the function. So if python executes `absolute(5)`,
-then after checking `x>0`, which returns `True` (as in this case `x` has the
-value `5`), python will see the line `return x`, so it will stop executing the
-function, and return the value `x` (which here is `5`). So if we write `print
-absolute(5)` then as `absolute(5)` returns `5`, we expect python to `print 5`,
-which it does indeed do.
+the function is run from top to bottom, just like a function with no parameters.
 
-So to define a function, write `def functionName(param1, param2):`. You can have
-zero or more parameters. Then add in the function code below the definition
-remembering to indent it to right, and then unindent when you are done. To call
-a function, write `functionName(value1, value2)`. This has the effect of running
-the code in the function, with "param1" equal to the value "value1", and
-analogously for any other parameters. You'll often hear the terms "argument" and
-"parameter" used when talking about functions. In this example `x` is a
-"parameter" because it is in the function definition (`def absolute(x):`). When
-the function is called, for example like: `absolute(5)`, we call 5 an "argument"
-to the function. When the function is run, we say that "the parameter `x` will
-take the value `5`". Don't worry if this all sounds totally crazy, functions
-will make a great deal of sense once you start to use them.
+#### Return values
 
+This function also introduced the `return` keyword, which lets a function stop
+executing immediately, and return a result to the code that initially called the
+function.
+
+If python executes `absolute(5)`, then after checking `x > 0`,
+which is true (because, remember `x` is 5), python will see the line `return x`,
+so it will stop executing the function, and return the value of `x` (which is
+5). So if we write `print absolute(5)` then as `absolute(5)` returns `5`, we
+expect python to `print 5`.
+
+The next time we run the `absolute` function, we give it `-5` as the parameter.
+Which makes `x > 0` no longer true, resulting in the line `return -x` being
+called. Because `x` is -5, this makes `-x` +5 (or just 5), so we get python
+printing `5` again.
+
+#### Defining a function
+
+We write `def functionName(param1, param2, ...):` to define a function.
+
+ * You can have zero or more parameters.
+ * Add in the function code below the definition, remembering to indent it
+   further right than the definition (by atleast 4 spaces).
+
+#### Calling a function
+
+To call a function, write `functionName(value1, value2)`.
+
+This has the effect of running the code in the function, with `param1` equal to
+the value `value1`, and analogously for any other parameters.
+
+You'll often hear the terms "argument" and "parameter" used when talking about
+functions. In this example `param1` is a "parameter" because it is in the
+function definition (`def functionName(param1, param2, ...):`).
+
+In the above example of a function call, we call `value1` an "argument" to the
+function. When the function is run, we say that "the parameter `param1` will
+take the value `value1`". Functions may see complicated at first, but they will
+make more sense when you begin to use them
 
 #### Feeling familiar?
 
 It turns out that functions are in fact not new, you've been using loads of
 them! `print`, `len`, `raw_input`, `range`, and even `turtle.right` are all
 functions! Functions are a really useful way of taking a chunk of code, giving
-it a name, and making it reusable. Lets see one more function:
-
-
-    def max(x,y):
-        if(x>y):
-            return x;
-        else:
-            return y;
-
-    print max(5,6)
-
+it a name, and making it reusable.
 
 #### Uses of functions
 
@@ -276,13 +302,22 @@ error, because python hadn't yet seen the function definition for printPerson,
 so it didn't know what to do when it got to the line `printPerson(sam)`. So make
 sure you always define your functions before any code that calls the function.
 
+Use the function below to complete the challenge:
+
+    def max(x,y):
+        if(x > y):
+            return x;
+        else:
+            return y;
+
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Challenge</strong></div>
   <div class="panel-body">
-   Can you create a function called max_array which takes in an array of ints as a parameter, and returns the largest int in the array. Hint: use a for loop! You may need to look over materials in the previous lessons.
+   Can you create a function called max_array which takes in an array of ints as a parameter, and returns the largest int in the array.
+   <br/>
+   <strong>Hint</strong> use a for loop! You may need to look over materials in the previous lessons.
   </div>
 </div>
-
 
 #### Variables and their scope
 
@@ -297,22 +332,32 @@ happens because of "scope". All variables have a scope, but it becomes
 particularly noticeable in functions. It's best to see how this works by
 examples:
 
+    def printAndAddOne(number):
+        print(number)
+        return number + 1
 
-    def printAndAddOne(number): print(number) return number + 1
+    def main():
+        x = 1
+        printAndAddOne(x)
+        x = printAndAddOne(x)
+        print(x)
 
-    def main(): x = 1 printAndAddOne(x) x = printAndAddOne(x) print(x)
-    #print(number)
+    # print(number)
 
-    main() #print(x)
-
+    main()
+    # print(x)
 
 This example shows the important behaviour of scoped variables. What do you
 think the output will be? Now run the code, and try uncommenting the lines
-`#print(number)` and `#print(x)` to see what happens. The `printAndAddOne`
+`#print(number)` and `#print(x)` to see what happens.
+
+The `printAndAddOne`
 function only accesses the variable number, and this is allowed, since number is
 a paramter to the function. In some cases, functions can access variables that
 are not one of their parameters, but this is strongly discouranged as it can
-lead to confusion. Lets go through this example line by line as python would.
+lead to confusion.
+
+Lets go through this example line by line as python would.
 When python runs this code, it firstly sees a function defition for
 `printAndAddOne`. It remembers that its seen the function, and then moves on to
 below the function. Now it sees a function definition for `main`, and again
@@ -338,7 +383,9 @@ that variable is "forgotten" when python leaves the `printAndAddOne` funtion.
 Similarly, when python leaves the `main` function, all new variable assignments
 are forgotten about, which is why we cannot `print(x)` after we have left the
 `main` function. So when python changes out of a functions scope, then any newly
-introduced variables (in that function) are forgotten. If that didn't make sense
+introduced variables (in that function) are forgotten.
+
+If that didn't make sense
 then try reading it through a few times, and refer constantly to the code to see
 how python is moving through the code, and what is happening to the variables at
 each line. If it still doesn't make sense, then ask a helper to explain!
