@@ -53,27 +53,54 @@ you use `=` to assign a value to a key the does not exist in the dictionary?
   </div>
 </div>
 
+As you saw in the task, we get a `KeyError` when we try to access a key that
+doesn't exist.
 
-We get a `KeyError` when we ask to access a key that doesn't exist, but you can
-use the code `'lastName' in mydict` which will return a boolean (`True` or
-`False`) depending on if the key 'lastName' is in the dictionary. As you saw, it
-is also possible to assign a value to a key that was not previously in the
-dictionary using `=`, for example:
+To get around this there is the `in` keyword. You can use `in` to tell you
+whether a given key has a value in the dictionary and you can use `not in` to
+do the opposite:
 
+    mydict = { 'name': 'James', 'level': 9001 }
 
-    mydict = { } #The empty dictionary
+    'name'     in     mydict # => True
+    'name'     not in mydict # => False
+    'lastName' in     mydict # => False
+    'lastName' not in mydict # => True
+
+As you saw in the task, it is however possible to assign a value to a key that
+was not previously in the dictionary using `=`, for example:
+
+    mydict = { } # The empty dictionary
     mydict['name'] = 'james'
+
+    print(mydict)
     print(mydict['name'])
 
+When the above is run, it should print the following:
 
-For those of you who do maths, we'll note that a dictionary is a actually a
-mapping from keys to values, but don't worry if that doesn't mean anything to
-you. The values can actually be any object, and in the example we mapped
-`'name'` to a string and `'level'` to a value. You can also have duplicate
-values, so many keys can map to the same value. However you may not have
-duplicate keys (so one key cannot map to multiple values at a time - as this
-would not make sense). Additionally, you may only use certain types as keys.
+    {'name': 'James'}
+    James
 
+The values can actually be any object, and in the example we mapped the `'name'`
+key to a string and the `'level'` key to an integer. You can also have duplicate
+values, so multiple keys can map to the same value. However you may not have
+duplicate keys (E.g. Each key maps only to one value at a time):
+
+    # Multiple keys with the same value (allowed)
+    mydict = {'a': 1, 'b': 1}
+
+    print mydict
+    # => {'a': 1, 'b': 1}
+
+    # Multiple values for the same key (not allowed)
+    mydict = { 'a':1, 'a': 2}
+    print mydict
+    # => {'a': 2}
+
+As you can see, python decided to automatically choose the last value assigned
+to the `'a'` key, which was `2`.
+
+Additionally you may only use certain types as keys.
 
 <div class="panel panel-primary">   <div class="panel-
 heading"><strong>Task</strong></div>   <div class="panel-body">   Find one type
