@@ -105,9 +105,9 @@ Something that isn't necessarily a concern for every program but is for this one
 is how we are going to deal with user input. For simplicity's sake, we'll split
 a valid user input in to two bits: the command, and some arguments, e.g.:
 
-    * `describe` will print the description for the current location again.
-    * `quit` will exit the game.
-    * `go N`, `go E`, `go S` and `go W` will move the player in the appropriate
+ * `describe` will print the description for the current location again.
+ * `quit` will exit the game.
+ * `go N`, `go E`, `go S` and `go W` will move the player in the appropriate
       compass direction.
 
 So `describe` and `quit` are just commands with no argument, and `go` is a
@@ -217,7 +217,7 @@ way?).
 Your game is up and running now, but not really playable. You can't really do
 anything other than quit, so we should change that by adding some nice features.
 
-#### `describe`
+#### The `describe` command
 
 Currently you're playing blind. The game doesn't tell you where you are, or what
 it looks like, so we should change that. Before we ask the player what they want
@@ -227,7 +227,7 @@ should be able to ask the game to `describe` their current location.
 
 Firstly, we will add a function, under the `# Functions` comment:
 
-    describe(loc_name, locs):
+    def describe(loc_name, locs):
         location = locs[loc_name]
         BLANK_1
 
@@ -272,7 +272,7 @@ twice in succession, try it for yourself to verify).
   </div>
 </div>
 
-#### `help`
+#### The `help` command
 
 Now we can see where we're going! But players don't know what they can do, so
 let us tell them with a `help` command. Whenever they type `help` into the game
@@ -307,7 +307,7 @@ Once again, we add a function under the `# Functions` heading:
   </div>
 </div>
 
-#### `go`
+#### The `go` command
 
 You may have noticed we were a bit pre-emptive when we defined the `help`
 command: We told people there is a `go` command, but we haven't provided one
@@ -419,7 +419,7 @@ which was the description if we could underline the name in some way.
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
     <p>
-      print a line of <code>=</code> signs as long as the name, underneath
+      Print a line of <code>=</code> signs as long as the name, underneath
       the name of the location in the <code>describe()</code> function.
     </p>
     <p>
