@@ -755,13 +755,115 @@ location, when describing them.
 
 #### Adding objects at locations
 
-e.g:
+We might want to add objects to different locations that the player will be
+able to interact with. For example, coins, or a chest, or a sword (if the theme
+for your game is fantasy).
 
-* Chests
+To do this, we suggest implementing to new dictionaries:
+
+* `objects` which contains information about every single object inside the
+  game, regardless of where it is found.
+* `object_locations` which is a dictionary, with locations as the key, and the
+  value should be a `list` of objects from the objects variable.
+
+E.G:
+
+    objects = {
+      "Chest": {...},
+      "Sword": {...}
+    }
+
+    object_locations = {
+      "Town": ["Chest", "Sword"]
+    }
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+      Create the <code>objects</code> variable. We want the values of
+      everything in this dictionary to also be a dict. What should the keys of
+      <strong>these</strong> dictionaries be? I.E: What information do we want
+      to store about object, maybe a description of it? And whether a user will
+      be able to pick it up?
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+      Create the <code>object_locations</code> variable, and add some objects
+      to some locations.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task - Looking Around</strong></div>
+  <div class="panel-body">
+    <p>
+      Create a new <code>look</code> command for the user, which will display
+      information about the neighbors of your current location, and any objects
+      currently in your location.
+    </p>
+  </div>
+</div>
 
 #### Interacting with objects
 
-#### Adding Monsters into the mix
+We want the user to be able to pick up and drop objects, create a new list in
+the `player` dict that will store a list of all of the objects the player is
+currently holding, and fill it with any objects you want the user to start
+with. Call this list `"inventory"`.
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+    <p>
+      Create the <code>"inventory"</code> list in the <code>player</code> dict.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task - Inspecting the Inventory</strong></div>
+  <div class="panel-body">
+    <p>
+      Create a new command, <code>inventory</code>, which will allow the user
+      to list the objects which they have stored in their inventory.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task - Picking up Objects</strong></div>
+  <div class="panel-body">
+    <p>
+      A user may want to pick up objects at a location and put them into their
+      inventory. Implement a <code>pickup</code> command that will allow a user
+      to pick up an object <strong>only from the current location</strong>. We
+      want a way for the user to specify which object they want to pick up, the
+      way you do this is up to you.
+    </p>
+    <p>
+      <strong>Hint:</strong> you will want to remove the object from the
+      <code>object_locations</code> variable, and add it to the
+      <code>player["inventory"]</code> list.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task - Dropping Objects</strong></div>
+  <div class="panel-body">
+    <p>
+      Implement a <code>drop</code> command that does the opposite of the
+      <code>pickup</code> command.
+    </p>
+  </div>
+</div>
 
 
 
