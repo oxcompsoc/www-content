@@ -19,26 +19,28 @@ before getting started...
 
 ### Introducing dictionaries
 
-Try finding the type of `{'name': 'James',
-'level':9001 }`. You'll see it's something new, a `dict`.  The `dict` type is
-also referred to as a "dictionary" or as a "hashtable". They are created by a
-pair of braces `{ }`, and inside the braces you can put a comma separated list
-of keys and values in the form `key1:value1, key2:value2, key3:value3, ...`.
+Try finding the type of `{'name': 'James', 'level':9001 }`. You'll see it's
+something new, a `dict`.
+
+The `dict` type is also referred to as a "dictionary" or "hashtable". They are a
+comma separated list of keys and values in the form `key1:value1, key2:value2,
+key3:value3, ...` surrounded by a pair of curly braces `{ ... }`.
 
 #### Basic operations
 
 Lets take a look at a larger example:
 
-
     mydict = {'name': 'James', 'level':9001}
     print(mydict['name'])
     print(mydict)
 
-  
-Can you see what's happening here? We use square brackets in a similar fashion
-to arrays, so `mydict['name']` says "Look inside `mydict`, access the key
-`'name'` and give me its corresponding value". Similarly, we can replace the
-value corresponding to the key `'name'` with `mydict['name'] = 'newvalue'`.
+Can you see what's happening here?
+
+Like lists, we can use square brackets to *index* a dictionary, so, just like
+`elems[0]` will return the first element of the `elems` list, if we write
+`mydict['name']` it means "Look inside `mydict`, access the key `'name'` and
+give me its corresponding value". Similarly, we can replace the value
+corresponding to the key `'name'` with `mydict['name'] = 'newvalue'`.
 
 What happens if you try to access the value of a key that does not exist? Can
 you use `=` to assign a value to a key the does not exist in the dictionary?
