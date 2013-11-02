@@ -17,21 +17,266 @@ answe any questions during the lesson.
 There are a couple more interesting things that we would like to teach you
 before getting started...
 
-### Introducing the `dict` type
+### Introducing dictionaries 
 
-#### Some examples using `dict`
+Try finding the type of `{'name': 'James',
+'level':9001 }`. You'll see it's something new, a `dict`.  The `dict` type is
+also referred to as a "dictionary" or as a "hashtable". They are created by a
+pair of braces `{ }`, and inside the braces you can put a comma separated list
+of keys and values in the form `key1:value1, key2:value2, key3:value3, ...`.
 
-### Intruducing Functions
+#### Basic operations
 
-#### How are they useful
+Lets take a look at a larger example:
 
-#### Function Arguments
 
-#### Talk about how they've been using them the whole time, and give examples
+    mydict = {'name': 'James', 'level':9001}
+    print(mydict['name'])
+    print(mydict)
 
-#### Functions have their own variables
+  
+Can you see what's happening here? We use square brackets in a similar fashion
+to arrays, so `mydict['name']` says "Look inside `mydict`, access the key
+`'name'` and give me its corresponding value". Similarly, we can replace the
+value corresponding to the key `'name'` with `mydict['name'] = 'newvalue'`.
 
-(talk about function scope)
+What happens if you try to access the value of a key that does not exist? Can
+you use `=` to assign a value to a key the does not exist in the dictionary?
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+  What happens if you try to access the value of a key that does not exist?
+  Can you use <code>=</code> to assign a value to a key the does not exist in the dictionary?
+  </div>
+</div>
+
+
+We get a `KeyError` when we ask to access a key that doesn't exist, but you can
+use the code `'lastName' in mydict` which will return a boolean (`True` or
+`False`) depending on if the key 'lastName' is in the dictionary. As you saw, it
+is also possible to assign a value to a key that was not previously in the
+dictionary using `=`, for example:
+
+
+    mydict = { } #The empty dictionary
+    mydict['name'] = 'james'
+    print(mydict['name'])
+
+
+For those of you who do maths, we'll note that a dictionary is a actually a
+mapping from keys to values, but don't worry if that doesn't mean anything to
+you. The values can actually be any object, and in the example we mapped
+`'name'` to a string and `'level'` to a value. You can also have duplicate
+values, so many keys can map to the same value. However you may not have
+duplicate keys (so one key cannot map to multiple values at a time - as this
+would not make sense). Additionally, you may only use certain types as keys.
+
+
+<div class="panel panel-primary">   <div class="panel-
+heading"><strong>Task</strong></div>   <div class="panel-body">   Find one type
+other than string that can be used for keys, and one type that cannot.   </div>
+</div>
+
+Finally, we have value assignment and updating, but what about deletion? You can
+remove a key:value pair by saying `del mydict['name']` watch out though - you'll
+get a `KeyError` if the key isn't in the dictionary.
+
+
+#### Uses of dictionaries
+
+So why might we want to use a dictionary? In the game
+we'll be creating later, we're going to need some way of keeping track of
+information regarding the player. A dictionary is an ideal type for containing
+all information relevant to the player in one place. We could have several
+separate variables, but that rapidly gets tedious, especially when we throw
+functions into the mix.
+
+
+### Functions
+
+Start by typing to following into your text editor, then run it in python:
+
+
+    def sayhi():
+        print "hi"
+
+    sayhi()
+    sayhi()
+
+
+We just defined a "function" called `sayhi`, you can call a function by using
+its name followed by parentheses, in this case `sayhi()`.
+
+#### Introducing parameters
+
+Lets see a slightly different function:
+
+
+    def absolute(x):
+        if(x>0):
+            return x
+        else:
+            return -x
+
+    print absolute(5)
+    print absolute(-5)
+
+
+This function, called `absolute` takes a parameter `x`. When the function is
+called, for example with  `absolute(5)`, then `x` is assigned the value `5`, and
+the function is run from top to bottom. Just like with loops, here the
+indentation is important, so the "body" of the function is all the code indented
+to the right immediately below the function definition (which is the line which
+says `def absolute(x):`). This function also introduced the `return` keyword,
+which lets a function stop executing immediately, and return a result to the
+code that initially called the function. So if python executes `absolute(5)`,
+then after checking `x>0`, which returns `True` (as in this case `x` has the
+value `5`), python will see the line `return x`, so it will stop executing the
+function, and return the value `x` (which here is `5`). So if we write `print
+absolute(5)` then as `absolute(5)` returns `5`, we expect python to `print 5`,
+which it does indeed do.
+
+So to define a function, write `def functionName(param1, param2):`. You can have
+zero or more parameters. Then add in the function code below the definition
+remembering to indent it to right, and then unindent when you are done. To call
+a function, write `functionName(value1, value2)`. This has the effect of running
+the code in the function, with "param1" equal to the value "value1", and
+analogously for any other parameters. You'll often hear the terms "argument" and
+"parameter" used when talking about functions. In this example `x` is a
+"parameter" because it is in the function definition (`def absolute(x):`). When
+the function is called, for example like: `absolute(5)`, we call 5 an "argument"
+to the function. When the function is run, we say that "the parameter `x` will
+take the value `5`". Don't worry if this all sounds totally crazy, functions
+will make a great deal of sense once you start to use them.
+
+
+#### Feeling familiar?
+
+It turns out that functions are in fact not new, you've been using loads of
+them! `print`, `len`, `raw_input`, `range`, and even `turtle.right` are all
+functions! Functions are a really useful way of taking a chunk of code, giving
+it a name, and making it reusable. Lets see one more function:
+
+
+    def max(x,y):
+        if(x>y):
+            return x;
+        else:
+            return y;
+
+    print max(5,6)
+
+
+#### Uses of functions
+
+Clearly functions are useful to prevent us writing the same code time and time
+again. But, because functions have parameters, they enable something much more
+powerful, the generalisation of code. Suppose we write the following:
+
+
+    james = {'name': 'James', 'dob':1993 }
+    sam = {'name': 'Sam', 'dob':1992 }
+    print(james['name'] + ' - ' + str(james['dob']))
+    print(sam['name'] + ' - ' + str(sam['dob']))
+
+
+With a function, we can generalise this as follows:
+
+
+    def printPerson(person):
+        print(person['name'] + ' - ' + str(person['dob']))    
+
+    james = {'name': 'James', 'dob':1993 }
+    sam = {'name': 'Sam', 'dob':1992 }
+    printPerson(james)
+    printPerson(sam)
+
+
+Yes, in this example we did write more code, but now suppose we want to actually
+print the date of birth first and then the name. We can simply change the code
+in the printPerson function, and reap the rewards everywhere we use the
+function. You'll see that we defined the function before we used it in the code.
+Check what happens if you run the same example as above, but instead with the
+function printPerson below the line `printPerson(sam)`. Hopefully you got an
+error, because python hadn't yet seen the function definition for printPerson,
+so it didn't know what to do when it got to the line `printPerson(sam)`. So make
+sure you always define your functions before any code that calls the function.
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Challenge</strong></div>
+  <div class="panel-body">
+   Can you create a function called max_array which takes in an array of ints as a parameter, and returns the largest int in the array. Hint: use a for loop! You may need to look over materials in the previous lessons.
+  </div>
+</div>
+
+
+#### Variables and their scope
+
+Lastly, we need to talk about using and defining variables inside a function.
+When we call a function, like `printPerson(james)`, then as we discussed, the
+parameter `person` (which is a variable) gets assigned to the same value as the
+argument `james`. Now this `person` variable is interesting, because it only
+exists inside the function. So from outside the function, there is no way to
+access the value `person`. This actually makes a lot of sense, because the
+variable `person` only ever gets a value when the function is called. This
+happens because of "scope". All variables have a scope, but it becomes
+particularly noticeable in functions. It's best to see how this works by
+examples:
+
+
+    def printAndAddOne(number): print(number) return number + 1
+
+    def main(): x = 1 printAndAddOne(x) x = printAndAddOne(x) print(x)
+    #print(number)
+
+    main() #print(x)
+
+
+This example shows the important behaviour of scoped variables. What do you
+think the output will be? Now run the code, and try uncommenting the lines
+`#print(number)` and `#print(x)` to see what happens. The `printAndAddOne`
+function only accesses the variable number, and this is allowed, since number is
+a paramter to the function. In some cases, functions can access variables that
+are not one of their parameters, but this is strongly discouranged as it can
+lead to confusion. Lets go through this example line by line as python would.
+When python runs this code, it firstly sees a function defition for
+`printAndAddOne`. It remembers that its seen the function, and then moves on to
+below the function. Now it sees a function definition for `main`, and again
+moves on. Then python sees the function call `main()` so it jumps to the
+function `main` and starts executing the code inside the function. Firstly it
+assigns the value `1` to `x`, but because python is in a new scope (indicated by
+the fact we are in a new function), it notes that when it leaves this scope, it
+will forget everything about this assignment. Then it moves forwards to the next
+line, and sees a function call `printAndAddOne(x)` so python remebers the
+current line (for later), and jumps to the function `printAndAddOne`, assigning
+`number` the value of `x` (which is `1`). Next it prints the current value of
+`number` (which is `1`), and returns the value `number + 1`. Python notes that
+its finished this function, so it jumps back to where it was before. It was
+previously at the line `printAndAddOne(x)`, and python sees that it can discard
+the returned value from the function, since we do not use it at this line. Now
+it moves forwards another line, and again sees another function call of
+`printAndAddOne`, so again that function is executed (exactly as before). This
+time, because the line says `x = printAndAddOne(x)`, python assigns `x` the
+returned value of the function. After executing the function, python will then
+print the new value of `x`. Now, the line `#print(number)` is commented, so
+python ignores that. The reason we cannot print the value `number`, is because
+that variable is "forgotten" when python leaves the `printAndAddOne` funtion.
+Similarly, when python leaves the `main` function, all new variable assignments
+are forgotten about, which is why we cannot `print(x)` after we have left the
+`main` function. So when python changes out of a functions scope, then any newly
+introduced variables (in that function) are forgotten. If that didn't make sense
+then try reading it through a few times, and refer constantly to the code to see
+how python is moving through the code, and what is happening to the variables at
+each line. If it still doesn't make sense, then ask a helper to explain!
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-body">
+  Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function. 
+  </div>
+</div>
+
 
 ## Let's Start Making a Game
 
