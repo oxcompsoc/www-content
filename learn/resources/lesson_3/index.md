@@ -163,21 +163,25 @@ rapidly gets tedious, especially when we throw functions into the mix.
 
 Start by typing to following into your text editor, then run it in python:
 
-
     def sayhi():
         print "hi"
 
     sayhi()
     sayhi()
 
+We just defined a "function" called `sayhi`. You can call a function by using
+its name followed by parentheses. In this case, it's `sayhi()`.
 
-We just defined a "function" called `sayhi`, you can call a function by using
-its name followed by parentheses, in this case `sayhi()`.
+In this example you can see one of the advantages of functions straight away: We
+wrote the code once, but we can use it however many times we want. This means if
+that code were to change, and we had used it in multiple places, rather than
+tracking down every place it's been used and changing it there, we need only
+change it in one place: the function and we can be sure in the knowledge that
+everywhere the function is used will now be using the changed code.
 
 #### Introducing parameters
 
 Lets see a slightly different function:
-
 
     def absolute(x):
         if(x>0):
@@ -186,7 +190,10 @@ Lets see a slightly different function:
             return -x
 
     print absolute(5)
+    # => 5
+
     print absolute(-5)
+    # => 5
 
 
 This function, called `absolute` takes a parameter `x`. When the function is
