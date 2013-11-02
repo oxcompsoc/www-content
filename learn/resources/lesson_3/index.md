@@ -30,9 +30,9 @@ of keys and values in the form `key1:value1, key2:value2, key3:value3, ...`.
 Lets take a look at a larger example:
 
 
-  mydict = {'name': 'James', 'level':9001}
-  print(mydict['name'])
-  print(mydict)
+    mydict = {'name': 'James', 'level':9001}
+    print(mydict['name'])
+    print(mydict)
 
   
 Can you see what's happening here? We use square brackets in a similar fashion
@@ -59,9 +59,9 @@ is also possible to assign a value to a key that was not previously in the
 dictionary using `=`, for example:
 
 
-  mydict = { } #The empty dictionary
-  mydict['name'] = 'james'
-  print(mydict['name'])
+    mydict = { } #The empty dictionary
+    mydict['name'] = 'james'
+    print(mydict['name'])
 
 
 For those of you who do maths, we'll note that a dictionary is a actually a
@@ -175,22 +175,22 @@ again. But, because functions have parameters, they enable something much more
 powerful, the generalisation of code. Suppose we write the following:
 
 
-  james = {'name': 'James', 'dob':1993 }
-  sam = {'name': 'Sam', 'dob':1992 }
-  print(james['name'] + ' - ' + str(james['dob']))
-  print(sam['name'] + ' - ' + str(sam['dob']))
+    james = {'name': 'James', 'dob':1993 }
+    sam = {'name': 'Sam', 'dob':1992 }
+    print(james['name'] + ' - ' + str(james['dob']))
+    print(sam['name'] + ' - ' + str(sam['dob']))
 
 
 With a function, we can generalise this as follows:
 
 
-  def printPerson(person):
-      print(person['name'] + ' - ' + str(person['dob']))    
+    def printPerson(person):
+        print(person['name'] + ' - ' + str(person['dob']))    
 
-  james = {'name': 'James', 'dob':1993 }
-  sam = {'name': 'Sam', 'dob':1992 }
-  printPerson(james)
-  printPerson(sam)
+    james = {'name': 'James', 'dob':1993 }
+    sam = {'name': 'Sam', 'dob':1992 }
+    printPerson(james)
+    printPerson(sam)
 
 
 Yes, in this example we did write more code, but now suppose we want to actually
@@ -225,12 +225,12 @@ particularly noticeable in functions. It's best to see how this works by
 examples:
 
 
-  def printAndAddOne(number): print(number) return number + 1
+    def printAndAddOne(number): print(number) return number + 1
 
-  def main(): x = 1 printAndAddOne(x) x = printAndAddOne(x) print(x)
-  #print(number)
+    def main(): x = 1 printAndAddOne(x) x = printAndAddOne(x) print(x)
+    #print(number)
 
-  main() #print(x)
+    main() #print(x)
 
 
 This example shows the important behaviour of scoped variables. What do you
