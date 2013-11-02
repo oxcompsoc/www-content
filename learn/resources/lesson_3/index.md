@@ -26,7 +26,7 @@ The `dict` type is also referred to as a "dictionary" or "hashtable". They are a
 comma separated list of keys and values in the form `key1:value1, key2:value2,
 key3:value3, ...` surrounded by a pair of curly braces `{ ... }`.
 
-#### Basic operations
+#### Looking up values
 
 Lets take a look at a larger example:
 
@@ -56,6 +56,8 @@ you use `=` to assign a value to a key the does not exist in the dictionary?
 As you saw in the task, we get a `KeyError` when we try to access a key that
 doesn't exist.
 
+#### Checking values exist
+
 To get around this there is the `in` keyword. You can use `in` to tell you
 whether a given key has a value in the dictionary and you can use `not in` to
 do the opposite:
@@ -66,6 +68,8 @@ do the opposite:
     'name'     not in mydict # => False
     'lastName' in     mydict # => False
     'lastName' not in mydict # => True
+
+#### Adding values
 
 As you saw in the task, it is however possible to assign a value to a key that
 was not previously in the dictionary using `=`, for example:
@@ -97,30 +101,63 @@ duplicate keys (E.g. Each key maps only to one value at a time):
     print mydict
     # => {'a': 2}
 
+#### Modifying values
+
 As you can see, python decided to automatically choose the last value assigned
-to the `'a'` key, which was `2`.
+to the `'a'` key, which was `2`. This behaviour is what allows you to
+*overwrite* existing values in a dictionary, if you assign a value to a key that
+already exists in the dictionary:
 
-Additionally you may only use certain types as keys.
+    mydict = {'name': 'Joe'}
 
-<div class="panel panel-primary">   <div class="panel-
-heading"><strong>Task</strong></div>   <div class="panel-body">   Find one type
-other than string that can be used for keys, and one type that cannot.   </div>
+    print mydict
+    # => {'name': 'Joe'}
+
+    mydict['name'] = 'James'
+
+    print mydict
+    # => {'name': 'James'}
+
+#### Key value types
+
+You can use more than just strings as keys in dictionaries, experiment with
+other values as key types and see which ones work and which ones don't.
+
+<div class="panel panel-primary">
+    <div class="panel- heading"><strong>Task</strong></div>
+    <div class="panel-body">
+      <p>
+        Find one type other than string that can be used for keys, and one type
+        that cannot.
+      </p>
+      <p>
+        <strong>Hint</strong> If you choose a key type that is not allowed you
+        will get an error that begins <code>TypeError: unhashable type</code>
+        and tells you the name of the type you tried to use.
+    </div>
 </div>
 
-Finally, we have value assignment and updating, but what about deletion? You can
-remove a key:value pair by saying `del mydict['name']` watch out though - you'll
-get a `KeyError` if the key isn't in the dictionary.
+#### Deleting values
 
+You can remove an entry from the dictionary using the `del` keyword:
+
+    mydict = {'name': 'James', 'level': 9001}
+
+    del mydict['name']
+
+    print mydict
+    # => {'level': 9001}
+
+Watch out though! You'll get a `KeyError` if the key wan't in the dictionary
+to begin with.
 
 #### Uses of dictionaries
 
-So why might we want to use a dictionary? In the game
-we'll be creating later, we're going to need some way of keeping track of
-information regarding the player. A dictionary is an ideal type for containing
-all information relevant to the player in one place. We could have several
-separate variables, but that rapidly gets tedious, especially when we throw
-functions into the mix.
-
+So why might we want to use a dictionary? In the game we'll be creating later,
+we're going to need some way of keeping track of information regarding the
+player. A dictionary is an ideal type for containing all information relevant to
+the player in one place. We could have several separate variables, but that
+rapidly gets tedious, especially when we throw functions into the mix.
 
 ### Functions
 
