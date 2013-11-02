@@ -7,17 +7,17 @@
 In this lesson, we will be taking a little bit of a different approach. We will
 be working towards the goal of creating a text based adventure game. There will
 be less guidance, so that you can try and use the skills that you have learned
-in the lessions so far.
+in the lessons so far.
 
 We will give you tasks to complete, and tips, and helpers will be available to
-answe any questions during the lesson.
+answer any questions during the lesson.
 
 ## Before we Start
 
 There are a couple more interesting things that we would like to teach you
 before getting started...
 
-### Introducing dictionaries 
+### Introducing dictionaries
 
 Try finding the type of `{'name': 'James',
 'level':9001 }`. You'll see it's something new, a `dict`.  The `dict` type is
@@ -185,7 +185,7 @@ With a function, we can generalise this as follows:
 
 
     def printPerson(person):
-        print(person['name'] + ' - ' + str(person['dob']))    
+        print(person['name'] + ' - ' + str(person['dob']))
 
     james = {'name': 'James', 'dob':1993 }
     sam = {'name': 'Sam', 'dob':1992 }
@@ -273,7 +273,7 @@ each line. If it still doesn't make sense, then ask a helper to explain!
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
-  Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function. 
+  Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function.
   </div>
 </div>
 
