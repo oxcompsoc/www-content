@@ -105,9 +105,9 @@ Something that isn't necessarily a concern for every program but is for this one
 is how we are going to deal with user input. For simplicity's sake, we'll split
 a valid user input in to two bits: the command, and some arguments, e.g.:
 
-    * `describe` will print the description for the current location again.
-    * `quit` will exit the game.
-    * `go N`, `go E`, `go S` and `go W` will move the player in the appropriate
+ * `describe` will print the description for the current location again.
+ * `quit` will exit the game.
+ * `go N`, `go E`, `go S` and `go W` will move the player in the appropriate
       compass direction.
 
 So `describe` and `quit` are just commands with no argument, and `go` is a
