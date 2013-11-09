@@ -313,7 +313,7 @@ Use the function below to complete the challenge:
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Challenge</strong></div>
   <div class="panel-body">
-   Can you create a function called max_array which takes in an array of ints as a parameter, and returns the largest int in the array.
+   Can you create a function called max_list which takes in an list of ints as a parameter, and returns the largest int in the list.
    <br/>
    <strong>Hint</strong> use a for loop! You may need to look over materials in the previous lessons.
   </div>
