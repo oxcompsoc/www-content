@@ -9,8 +9,8 @@
 </div>
 
 All matriculated members of Oxford University are welcome to apply for ordinary
-membership of Compsoc. Membership forms are available by pigeon post / email
-from the Secretary, or you can fill one out at most of our events.
+membership of Compsoc. A membership form can be downloaded and printed from
+here: [Membership Form](form.pdf).
 
 *Note: Anyone may attend talks, geek nights, and "learn to code" events run
 by CompSoc for free.*
