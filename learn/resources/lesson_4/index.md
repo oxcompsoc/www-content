@@ -629,14 +629,150 @@ Replace all of the ellipses (`...`).
 <br/><a id="Task_13"></a>
 ### Task 13: Flattening a list of lists
 
+#### Instructions:
+
+Create a function `flatten_list`, that, when given a list of lists, produces
+a list containing the same elements, all in one list.
+
+i.e. `[[1, 2], [3]]` becomes `[1, 2, 3]`
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        ...
+        return acc
+
+    # Test Code
+    print "Testing"
+
+    print flatten([]) # []
+    print flatten([[], []]) # []
+    print flatten([[1], [2]]) # [1, 2]
+    print flatten([[1, 2], [3]]) # [1, 2, 3]
+    print flatten([[1, 2], [3], [], [4, 5]]) # [1, 2, 3, 4, 5]
+
 <br/><a id="Task_14"></a>
 ### Task 14: Using `sum_list` in `sum_list_of_lists`
+
+#### Instructions:
+
+When writing your first implementation of `sum_list_of_lists` you may have
+written the function using nested loops (one `for` or `while` loop inside
+another). However, your inside for loop, looks suspiciously similar to the loop
+inside `sum_list`.
+
+Why is that? It's because they are both doing the same thing: Summing a list to
+produce a number. This means your inner loop can be replaced with `sum_list`.
+
+Perform the replacement in your version of `sum_list_of_lists` and make sure the
+behaviour remains unchanged.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code and Expected Output
+
+Same as for [Task 12](#Task_12)
 
 <br/><a id="Task_15"></a>
 ### Task 15: Using `flatten` in `sum_list_of_lists`
 
+#### Instructions:
+
+If you compare the outputs of `flatten` and `sum_list_of_lists` on the same
+lists, you may notice a pattern: If you sum the result of `flatten` you get
+the result of `sum_list_of_lists`. This happens to always be true, and we can
+take advantage of this fact to make `sum_list_of_lists` **even** shorter.
+
+Replace the definition of `sum_list_of_lists` with calls to `flatten` and
+`sum_list`, making sure the behaviour stays the same once again.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate code and Expected Output:
+
+Same as for [Task 12](#Task_12)
+
 <br/><a id="Task_16"></a>
 ### Task 16: Generalising `flatten`
+
+#### Instructions:
+
+What if you wanted to define a function called `sum_nested_lists`, which sums
+the elements of a list, no matter how deeply they are nested, (even if they
+aren't nested to the same level)?
+
+We can simplify this problem into one we understand: summing a single list. We
+do this by once again flattening the inputted list so it has no nested lists,
+but still contains the same elements.
+
+But if we give our current flatten function a list like `[[1, 2], 3]`, it would
+complain, because the outer list doesn't contain all lists. And furthermore, if
+we tried to give it a list like `[[[1, 2], [3]], [[4, 5], [6]]]` then it would
+also break because the lists are nested more deeply than it is designed to deal
+with.
+
+We need to create a function that checks the types of all the elements that it
+sees, before adding them  to `acc`. And if the item is a list, we should
+flatten it too, before adding its elements.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        for x in lst:
+            if type(x) == list:
+                ... # Flatten it before adding
+            else:
+                ... # Append the element
+
+        return acc
+
+    def sum_nested_lists(lst):
+        ... # Same as for `sum_list_of_lists` after task 15.
+
+    # Test Code
+    print "Testing"
+
+    print sum_nested_lists([]) # 0
+    print sum_nested_lists([[], []]) # 0
+    print sum_nested_lists([1, 2, 3]) # 6
+    print sum_nested_lists([[[]], []]) # 0
+    print sum_nested_lists([[1, 2], 3]) # 6
+    print sum_nested_lists([[1, 2], [3, []], [[[4]]]]) # 10
+
+#### Expected Output:
+
+    0
+    0
+    6
+    0
+    6
+    10
 
 <br/><a id="Tasks_17_to_20"></a>
 ## Tasks 17-20: Sorting lists
