@@ -88,7 +88,7 @@ order** as they have increasing difficulty and less hints as you go on.
 * [Task 11: At least one True?](#Task_11)
 * [Task 12: Sum the values of lists of lists](#Task_12)
 
-#### [Tasks 13-16: Improving our functions](#Tasks_13_to_16)
+#### [Tasks 13-16: Improving `sum_list_of_lists`](#Tasks_13_to_16)
 
 * [Task 13: Flatten a list of lists](#Task_13)
 * [Task 14: Using `sum_list` in `sum_list_of_lists`](#Task_14)
@@ -624,7 +624,7 @@ Replace all of the ellipses (`...`).
 
 <br/><a id="Tasks_13_to_16"></a>
 
-## Tasks 13-16: Improving our functions
+## Tasks 13-16: Improving `sum_list_of_lists`
 
 <br/><a id="Task_13"></a>
 ### Task 13: Flattening a list of lists
