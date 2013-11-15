@@ -67,13 +67,28 @@ of the task works as expected.
 Here's a list of the tasks for this lesson, we recommend you **try them in
 order** as they have increasing difficulty and less hints as you go on.
 
-* #### [Task 1: Minimum Item of a List](#Task_1)
-* #### [Task 2: Maximum Item of a List](#Task_2)
+#### [Tasks 1-4: Basic `for` Loops](#Tasks_1_to_4)
+
+* [Task 1: Minimum Item of a List](#Task_1)
+* [Task 2: Maximum Item of a List](#Task_2)
+* [Task 3: Check if inside list](#Task_3)
+* [Task 4: Number of Instances in a List](#Task_4)
+
+#### [Tasks 5-8: Basic `while` Loops](#Tasks_5_to_8)
+
+* [Task 5: Minimum Item of a List (Using a `while` Loop)](#Task_5)
+* [Task 6: Maximum Item of a List (Using a `while` Loop)](#Task_6)
+* [Task 7: Check if inside list (Using a `while` Loop)](#Task_7)
+* [Task 8: Number of Instances in a List (Using a `while` Loop)](#Task_8)
 
 
+<br/><a id="Tasks_1_to_4"></a>
+## Tasks 1-4: Basic `for` Loops
 
-<a id="Task_1"></a>
-## Task 1: Minimum Item of a List
+Tasks 1-4 will be performing calculations on lists using `for` loops.
+
+<br/><a id="Task_1"></a>
+### Task 1: Minimum Item of a List
 
 #### Instructions:
 
@@ -119,8 +134,8 @@ Replace all of the ellipses (`...`).
 
 
 
-<a id="Task_2"></a>
-## Task 2: Maximum Item of a List
+<br/><a id="Task_2"></a>
+### Task 2: Maximum Item of a List
 
 #### Instructions:
 
@@ -159,8 +174,8 @@ Replace all of the ellipses (`...`).
     -900
 
 
-<a id="Task_3"></a>
-## Task 3: Check if inside list
+<br/><a id="Task_3"></a>
+### Task 3: Check if inside list
 
 #### Instructions:
 
@@ -211,8 +226,8 @@ Replace all of the ellipses (`...`).
 
 
 
-<a id="Task_4"></a>
-## Task 4: Number of Instances in a List
+<br/><a id="Task_4"></a>
+### Task 4: Number of Instances in a List
 
 #### Instructions:
 
@@ -261,3 +276,140 @@ Replace all of the ellipses (`...`).
     2
     1
     0
+
+
+
+<br/><a id="Tasks_5_to_8"></a>
+## Tasks 5-8: Basic `while` Loops
+
+Tasks 5-8 will be doing tasks 1-4 but using `while` loops instead of `for`
+loops.
+
+Whenever you write a `for` loop, you can convert your code to use a `while`
+loop instead!
+
+**Example:**
+
+    for item in my_list:
+        print item
+
+Is the same as
+
+    index = 0
+    while index < len(my_list):
+        item = my_list[index]
+        print item
+
+        index += 1
+
+Basically, a `for` loop is a special kind of `while` loop that makes writing
+some code look much nicer. For the following exercises, we want you to use the
+technique given in the example above to try and understand what the `for` loop
+is doing, and convert it to a more complicated `while` loop.
+
+
+
+<br/><a id="Task_5"></a>
+### Task 5: Minimum Item of a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 1](#Task_1), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 1](#Task_1)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def min_list(lst):
+        min = ... # What should we set this value to to begin with?
+
+        index = 0
+        while index < len(lst):
+            item = lst[index]
+            print item
+
+            ... # What goes here?
+
+            index += 1
+
+        return min
+
+    # Test Code
+    print "Testing..."
+
+    print min_list([5, 2, 7, 1, 9]) # This should be 1
+    print min_list([5, 2, -7 ,1 ,9]) # This should be -7
+    print min_list([900]) # This should be 900
+    print min_list([-900]) # This should be -900
+
+#### Expected Output
+
+Same as [Task 1](#Task_1)
+
+
+
+<br/><a id="Task_6"></a>
+### Task 6: Maximum Item of a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 2](#Task_2), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 2](#Task_2)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 2](#Task_2)
+
+
+
+<br/><a id="Task_7"></a>
+### Task 7: Check if inside list (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 3](#Task_3), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 3](#Task_3)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 3](#Task_3)
+
+
+
+<br/><a id="Task_8"></a>
+### Task 8: Number of Instances in a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 4](#Task_4), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 4](#Task_4)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 4](#Task_4)
+
+
+
+<br/><a id="Tasks_9_to_"></a>
+## Tasks 9-: More `for` Loops
