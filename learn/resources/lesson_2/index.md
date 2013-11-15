@@ -23,6 +23,7 @@ The first variable value is just a number, however the second one is surrounded
 with quotation marks (`" "`). This is because the values that we have set the
 variables to have different [[../definitions/types|types]].
 
+<a id="Types"></a>
 ## Introducing Types
 
 Most programming languages have a concept of [[../definitions/types|types]],
@@ -102,6 +103,7 @@ the start and the end!**
   </div>
 </div>
 
+<a id="Manipulating_Variables"></a>
 ## Manipulating Values and Variables
 
 When writing programs, you will come accross the need to manipulate and combine
@@ -274,6 +276,7 @@ Again, you can do the same thing with `str`:
 
 Notice how the values are surrounded in quotes (`' '`).
 
+<a id="Manipulating_Strings"></a>
 ### Playing around with strings
 
 Something that you'll find that you'll be doing quite often is building large
@@ -328,6 +331,7 @@ And of course, concatenating lots of strings together works as we'd expect:
 We'll be coming back to this later on when we start to use the
 [[../definitions/terminal|console]]!
 
+<a id="Lists"></a>
 ## A More Interesting Type: `list`
 
 Lists are a very useful type of value, they allow you to store a sequence of
@@ -445,6 +449,7 @@ other value!
     >>> a
     ['dogs are cool', 'lion', 9]
 
+<a id="Console_Output"></a>
 ## Creating a Script with Console Output
 
 Now we've reached the part of the lesson where we're going to create a new
@@ -558,6 +563,7 @@ Running the code should result in this:
 Now we have a good way to output values and text to the terminal, lets start
 using it to build our results calculator.
 
+<a id="For_Loop"></a>
 ## Understanding the `for` loop
 
 In the [[../lesson_1|last lesson]], we used a `for` loop to repeat things a
@@ -692,6 +698,7 @@ Resulting in something like this:
     Learn to Dance
 
 
+<a id="Console_Input"></a>
 ## User Input
 
 Last lesson we wrote `raw_input()` to prevent our programs from terminating
@@ -785,6 +792,7 @@ Here's a working answer for the task:
 Awesome, now try out your program a few times. What happens if you don't enter
 a number?
 
+<a id="If_Statements"></a>
 ## If Statements
 
 ### Making Decisions
@@ -865,7 +873,8 @@ conditions, they must have failed, so you must `print "Fail."` as before.
   </div>
 </div>
 
-## While Statements
+<a id="While_Loop"></a>
+## While Loops
 
 We have met the `for` loop before, and seen that it is useful for traversing
 lists of things. *(i.e. it will run a number of times that we have already
@@ -965,6 +974,7 @@ yet. It's a fairly good rule of thumb that if you want to go through the items
 of some collection (a range of numbers, a list and later on dictionaries), then
 you want a `for` loop, and otherwise, you may want to consider a `while` loop.
 
+<a id="Bool_Type"></a>
 ## The `bool` Type
 
 In the last two sections, we have actually been using a new type of value, the

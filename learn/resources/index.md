@@ -20,9 +20,11 @@ will be available to come around and help you when you get there!
 
 ### [[lesson_2]]
 
+### [[lesson_3]]
+
 ## Content that is yet to be covered:
 
-### [[lesson_3]]
+### [[lesson_4]]
 
 ## Learn out-side of our course
 

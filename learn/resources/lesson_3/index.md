@@ -17,6 +17,7 @@ answer any questions during the lesson.
 There are a couple more interesting things that we would like to teach you
 before getting started...
 
+<a id="Dictionaries"></a>
 ### Introducing dictionaries
 
 Try finding the type of `{'name': 'James', 'level':9001 }`. You'll see it's
@@ -159,6 +160,7 @@ player. A dictionary is an ideal type for containing all information relevant to
 the player in one place. We could have several separate variables, but that
 rapidly gets tedious, especially when we throw functions into the mix.
 
+<a id="Functions"></a>
 ### Functions
 
 Start by typing to following into your text editor, then run it in python:

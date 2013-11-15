@@ -93,7 +93,7 @@ There are also these other commands you can try:
   </div>
 </div>
 
-
+<a id="First_Python_File"></a>
 ## Your first Python file
 
 There is of course a way of writing code which does require you to enter it
@@ -314,6 +314,7 @@ Outcome:
 <img class="img-thumbnail" src="turtle_4.png" alt="" style="display: block; margin: 0 auto;" />
 
 
+<a id="Variables"></a>
 ## Introducing Variables
 
 **Variables** are what we use to store information in the computer's memory for
@@ -489,6 +490,8 @@ It should still be drawing the same triangle.
   </div>
 </div>
 
+
+<a id="Mathematical_Operations"></a>
 ## Introducing Mathematical Operations
 
 You will probably have found that with the last task, you were working out
