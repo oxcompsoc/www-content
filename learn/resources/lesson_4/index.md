@@ -81,6 +81,13 @@ order** as they have increasing difficulty and less hints as you go on.
 * [Task 7: Check if inside list (Using a `while` Loop)](#Task_7)
 * [Task 8: Number of Instances in a List (Using a `while` Loop)](#Task_8)
 
+#### [Tasks 9-12: More `for` Loops](#Tasks_9_to_12)
+
+* [Task 9: Sum the elements in a list](#Task_9)
+* [Task 10: All True?](#Task_10)
+* [Task 11: At least one True?](#Task_11)
+* [Task 12: Sum the values of lists of lists](#Task_12)
+
 
 <br/><a id="Tasks_1_to_4"></a>
 ## Tasks 1-4: Basic `for` Loops
@@ -411,5 +418,193 @@ Same as [Task 4](#Task_4)
 
 
 
-<br/><a id="Tasks_9_to_"></a>
-## Tasks 9-: More `for` Loops
+<br/><a id="Tasks_9_to_12"></a>
+## Tasks 9-12: More `for` Loops
+
+
+
+<br/><a id="Task_9"></a>
+### Task 9: Sum the elements in a list
+
+#### Instructions:
+
+Create a function `sum_list` that, when given a list of numbers, will return
+the sum of all of the numbers in that list
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Mathematical Operations](../lesson_1/#Mathematical_Operations)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def sum_list(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print sum_list([]) # 0
+    print sum_list([1]) # 1
+    print sum_list([-1]) # -1
+    print sum_list([1, 2, 3, 4, 5]) # 15
+    print sum_list([1, 2, 3, 4, 5, -4, -3, -2, -1]) # 5
+
+#### Expected Output
+
+    0
+    1
+    -1
+    15
+    5
+
+
+
+<br/><a id="Task_10"></a>
+### Task 10: All True?
+
+#### Instructions:
+
+Create a function `all_true` that, when given a list of values, will return
+`False` if there are any values in the list that are `False`, otherwise it
+should return `True`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [**if** Statements](../lesson_2/#If_Statements) and
+  [**booleans**](../lesson_2/#Bool_Type)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def all_true(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print all_true([]) # True
+    print all_true([True]) # True
+    print all_true([False]) # False
+    print all_true([True, False]) # False
+    print all_true([False, True]) # False
+    print all_true([True, True]) # True
+
+#### Expected Output
+
+    True
+    True
+    False
+    False
+    False
+    True
+
+
+
+
+
+
+<br/><a id="Task_11"></a>
+### Task 11: At least one True?
+
+#### Instructions:
+
+Create a function `one_true` that, when given a list of values, will return
+`True` only if there is at least one value in the list that is `True`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [**if** Statements](../lesson_2/#If_Statements) and
+  [**booleans**](../lesson_2/#Bool_Type)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def one_true(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print one_true([]) # False
+    print one_true([True]) # True
+    print one_true([False]) # False
+    print one_true([True, False]) # True
+    print one_true([False, False]) # False
+    print one_true([False, True]) # True
+    print one_true([True, True]) # True
+
+#### Expected Output
+
+    False
+    True
+    False
+    True
+    False
+    True
+    True
+
+
+<br/><a id="Task_12"></a>
+### Task 12: Sum the values of lists of lists
+
+#### Instructions:
+
+Create a function `sum_list_of_lists`, that, when given a list of lists, will
+sum all of the values inside all of the lists together, and return the value.
+
+**Hint:** You will probably want to have a `for` loop inside a `for` loop fo
+this task.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def sum_list_of_lists(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print sum_list_of_lists([]) # 0
+    print sum_list_of_lists([[], []]) # 0
+    print sum_list_of_lists([[1], [2]]) # 3
+    print sum_list_of_lists([[1, 2], [3]]) # 6
+    print sum_list_of_lists([[1, 2], [3], [], [4, 5]]) # 15
+    print sum_list_of_lists([[1, 2], [3], [-5], [4, 5]]) # 10
+
+#### Expected Output
+
+    0
+    0
+    3
+    6
+    15
+    10
