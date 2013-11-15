@@ -88,6 +88,19 @@ order** as they have increasing difficulty and less hints as you go on.
 * [Task 11: At least one True?](#Task_11)
 * [Task 12: Sum the values of lists of lists](#Task_12)
 
+#### [Tasks 13-16: Improving our functions](#Tasks_13_to_16)
+
+* [Task 13: Flatten a list of lists](#Task_13)
+* [Task 14: Using `sum_list` in `sum_list_of_lists`](#Task_14)
+* [Task 15: Using `flatten` in `sum_list_of_lists`](#Task_15)
+* [Task 16: Generalising `flatten`](#Task_16)
+
+#### [Tasks 17-20: Sorting lists](#Tasks_17_to_20)
+
+* [Task 17: Removing the smallest element](#Task_17)
+* [Task 18: Selection sort](#Task_18)
+* [Task 19: Partitioning a list](#Task_19)
+* [Task 20: Quicksort](#Task_20)
 
 <br/><a id="Tasks_1_to_4"></a>
 ## Tasks 1-4: Basic `for` Loops
@@ -608,3 +621,34 @@ Replace all of the ellipses (`...`).
     6
     15
     10
+
+<br/><a id="Tasks_13_to_16"></a>
+
+## Tasks 13-16: Improving our functions
+
+<br/><a id="Task_13"></a>
+### Task 13: Flattening a list of lists
+
+<br/><a id="Task_14"></a>
+### Task 14: Using `sum_list` in `sum_list_of_lists`
+
+<br/><a id="Task_15"></a>
+### Task 15: Using `flatten` in `sum_list_of_lists`
+
+<br/><a id="Task_16"></a>
+### Task 16: Generalising `flatten`
+
+<br/><a id="Tasks_17_to_20"></a>
+## Tasks 17-20: Sorting lists
+
+<br/><a id="Task_17"></a>
+### Task 17: Removing the smallest element
+
+<br/><a id="Task_18"></a>
+### Task 18: Selection sort
+
+<br/><a id="Task_19"></a>
+### Task 19: Partitioning a list
+
+<br/><a id="Task_20"></a>
+### Task 20: Quicksort
