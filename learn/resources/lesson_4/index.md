@@ -88,6 +88,19 @@ order** as they have increasing difficulty and less hints as you go on.
 * [Task 11: At least one True?](#Task_11)
 * [Task 12: Sum the values of lists of lists](#Task_12)
 
+#### [Tasks 13-16: Improving `sum_list_of_lists`](#Tasks_13_to_16)
+
+* [Task 13: Flatten a list of lists](#Task_13)
+* [Task 14: Using `sum_list` in `sum_list_of_lists`](#Task_14)
+* [Task 15: Using `flatten` in `sum_list_of_lists`](#Task_15)
+* [Task 16: Generalising `flatten`](#Task_16)
+
+#### [Tasks 17-20: Sorting lists](#Tasks_17_to_20)
+
+* [Task 17: Removing the smallest element](#Task_17)
+* [Task 18: Selection sort](#Task_18)
+* [Task 19: Partitioning a list](#Task_19)
+* [Task 20: Quicksort](#Task_20)
 
 <br/><a id="Tasks_1_to_4"></a>
 ## Tasks 1-4: Basic `for` Loops
@@ -572,7 +585,7 @@ Replace all of the ellipses (`...`).
 Create a function `sum_list_of_lists`, that, when given a list of lists, will
 sum all of the values inside all of the lists together, and return the value.
 
-**Hint:** You will probably want to have a `for` loop inside a `for` loop fo
+**Hint:** You will probably want to have a `for` loop inside a `for` loop for
 this task.
 
 #### What you need to know:
@@ -608,3 +621,374 @@ Replace all of the ellipses (`...`).
     6
     15
     10
+
+<br/><a id="Tasks_13_to_16"></a>
+
+## Tasks 13-16: Improving `sum_list_of_lists`
+
+<br/><a id="Task_13"></a>
+### Task 13: Flattening a list of lists
+
+#### Instructions:
+
+Create a function `flatten`, that, when given a list of lists, produces
+a list containing the same elements, all in one list.
+
+i.e. `[[1, 2], [3]]` becomes `[1, 2, 3]`
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        ...
+        return acc
+
+    # Test Code
+    print "Testing"
+
+    print flatten([]) # []
+    print flatten([[], []]) # []
+    print flatten([[1], [2]]) # [1, 2]
+    print flatten([[1, 2], [3]]) # [1, 2, 3]
+    print flatten([[1, 2], [3], [], [4, 5]]) # [1, 2, 3, 4, 5]
+
+<br/><a id="Task_14"></a>
+### Task 14: Using `sum_list` in `sum_list_of_lists`
+
+#### Instructions:
+
+When writing your first implementation of `sum_list_of_lists` you may have
+written the function using nested loops (one `for` or `while` loop inside
+another). However, your inside for loop, looks suspiciously similar to the loop
+inside `sum_list`.
+
+Why is that? It's because they are both doing the same thing: Summing a list to
+produce a number. This means your inner loop can be replaced with `sum_list`.
+
+Perform the replacement in your version of `sum_list_of_lists` and make sure the
+behaviour remains unchanged.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code and Expected Output
+
+Same as for [Task 12](#Task_12)
+
+<br/><a id="Task_15"></a>
+### Task 15: Using `flatten` in `sum_list_of_lists`
+
+#### Instructions:
+
+If you compare the outputs of `flatten` and `sum_list_of_lists` on the same
+lists, you may notice a pattern: If you sum the result of `flatten` you get
+the result of `sum_list_of_lists`. This happens to always be true, and we can
+take advantage of this fact to make `sum_list_of_lists` **even** shorter.
+
+Replace the definition of `sum_list_of_lists` with calls to `flatten` and
+`sum_list`, making sure the behaviour stays the same once again.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate code and Expected Output:
+
+Same as for [Task 12](#Task_12)
+
+<br/><a id="Task_16"></a>
+### Task 16: Generalising `flatten`
+
+#### Instructions:
+
+What if you wanted to define a function called `sum_nested_lists`, which sums
+the elements of a list, no matter how deeply they are nested, (even if they
+aren't nested to the same level)?
+
+We can simplify this problem into one we understand: summing a single list. We
+do this by once again flattening the inputted list so it has no nested lists,
+but still contains the same elements.
+
+But if we give our current flatten function a list like `[[1, 2], 3]`, it would
+complain, because the outer list doesn't contain all lists. And furthermore, if
+we tried to give it a list like `[[[1, 2], [3]], [[4, 5], [6]]]` then it would
+also break because the lists are nested more deeply than it is designed to deal
+with.
+
+We need to create a function that checks the types of all the elements that it
+sees, before adding them  to `acc`. And if the item is a list, we should
+flatten it too, before adding its elements.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        for x in lst:
+            if type(x) == list:
+                ... # Flatten it before adding
+            else:
+                ... # Append the element
+
+        return acc
+
+    def sum_nested_lists(lst):
+        ... # Same as for `sum_list_of_lists` after task 15.
+
+    # Test Code
+    print "Testing"
+
+    print sum_nested_lists([]) # 0
+    print sum_nested_lists([[], []]) # 0
+    print sum_nested_lists([1, 2, 3]) # 6
+    print sum_nested_lists([[[]], []]) # 0
+    print sum_nested_lists([[1, 2], 3]) # 6
+    print sum_nested_lists([[1, 2], [3, []], [[[4]]]]) # 10
+
+#### Expected Output:
+
+    0
+    0
+    6
+    0
+    6
+    10
+
+<br/><a id="Tasks_17_to_20"></a>
+## Tasks 17-20: Sorting lists
+
+Sorting lists is a task that a lot of time has been spent trying to master, in
+the computing world. There are several ways to sort lists, but we are going
+to look at some simple options here that are easy to understand.
+
+Neither of the implementations you reach will be perfect or very efficient, but
+they will capture the essence of the task (the *algorithm*) and they will work.
+The first algorithm is rarely used in the real world, although the second is
+very popular, in some of its other forms.
+
+<br/><a id="Task_17"></a>
+### Task 17: Removing the smallest element
+
+#### Instructions:
+
+Create a function called `remove_min` that, when given a list, finds its minimal
+element and deletes it from the list, returning the element it deleted.
+
+You will find that this function is very similar to your previous function,
+`min_list`, and you can use this fact to guide you in the implementation of
+`remove_min`.
+
+We will use this function later on, in a sorting algorithm called *selection
+sort*.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+**Note:** the `del` command, introduced for dictionaries, also works for lists
+in the natural way: `del lst[2]` will remove the element at index 2.
+
+**Note:** you may find it helpful to use a `while` loop in this task because you
+will need to keep track of the index of the minimal element as well as the
+element itself, so you can delete it.
+
+    def remove_min(lst):
+        if len(lst) == 0: return # Nothing to remove for empty lists
+
+        min_i = 0
+        min   = lst[0]
+        i     = 1
+
+        ... # Loop through the list, finding the smallest element
+        ... # Delete the minimal element
+        return min
+
+    # Test Code
+    print "Testing"
+
+    test = [3,4,8,9,7]
+    print remove_min(test), test # 3 [4, 8, 9, 7]
+    print remove_min(test), test # 4 [8, 9, 7]
+    print remove_min(test), test # 7 [8, 9]
+    print remove_min(test), test # 8 [9]
+    print remove_min(test), test # 9 []
+
+<br/><a id="Task_18"></a>
+### Task 18: Selection sort
+
+#### Instructions:
+
+If you look at the output from the testing of `remove_min` you will see
+that succesive calls to `remove_min` return the elements of list in
+increasing order. We can exploit this in our sorting algorithm: We remove the
+minimal element from the list, until there are no elements left, appending each
+in turn to the end of a new list.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def selection_sort(lst):
+        sorted = []
+        list_len = len(lst) # Store this now because our loop will make it
+                            # smaller
+
+        ... # Loop through the list removing minimal elements from `lst` and
+            # appending them to `sorted`.
+
+        return sorted
+
+    # Test Code
+    print "Testing"
+
+    selection_sort([]) # []
+    selection_sort([1, 2, 3]) # [1, 2, 3]
+    selection_sort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    selection_sort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+    []
+    [1, 2, 3]
+    [3, 4, 7, 8, 9]
+    [-8, -4, -2, 2, 4, 8]
+
+<br/><a id="Task_19"></a>
+### Task 19: Partitioning a list
+
+#### Instructions:
+
+Partitioning involves taking a list, and producing two lists that together
+contain all the elements of the original in such a way that all the elements in
+one list are the elements less than some provided value (which we will call the
+`pivot`) and all the elements in the other list are greater than or equal to the
+`pivot`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def partition(pivot, lst):
+        lt, gte = [], [] # Less than, and greater than or equal to lists
+
+        ... # Loop through lst, filling `lt` and `gte`
+
+        return lt, gte
+
+    # Test Code
+    print "Testing"
+
+    print partition(0, []) # ([], [])
+    print partition(1, [1, 2, 3]) # ([], [1, 2, 3])
+    print partition(2, [1, 2, 3]) # ([1], [2, 3])
+    print partition(4, [1, 2, 3]) # ([1, 2, 3], [])
+
+#### Expected Output:
+
+    ([], [])
+    ([], [1, 2, 3])
+    ([1], [2, 3])
+    ([1, 2, 3], [])
+
+<br/><a id="Task_20"></a>
+### Task 20: Quicksort
+
+#### Instructions:
+
+Quicksort is a popular sorting algorithm that relies upon the principle of
+partitioning lists.
+
+ * Given a particular pivot element in the list (for convenience, let us just
+   use the first element) partition the **rest** of the list according to the
+   pivot.
+ * Now if we slot the pivot element in between the elements less than it and
+   greater than or equal to it, we find the pivot is in the *right place in the
+   list*.
+ * But the two lists provided by partition are not in sorted order, so how do we
+   deal with them? Well, we use our `quicksort` function to sort those too.
+ * Additionally, we say that lists with one or fewer elements are trivially
+   sorted, so we can just return them without doing any work.
+
+Use the hints above to define a function `quicksort` that uses partition to sort
+the list provided to it.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace the ellipses (`...`)
+
+**Note:** It may be useful to know that python has a feature that allows you to
+access a part of a list, i.e. `lst[n:]` means the elements from index
+`n` onwards. This may be useful when trying to get all the elements bar the
+first (which we use as the pivot).
+
+    def quicksort(lst):
+        # Lists of length 1 or 0 are already sorted, just return them
+        if len(lst) <= 1: return lst
+
+        pivot = ... # The first element
+        left, right = partition(pivot, ...) # Partition the rest of the list
+
+         # Sandwich the pivot between the sorted left and right sides
+        return ... + [pivot] + ...
+
+    # Test Code
+    print "Testing"
+
+    quicksort([]) # []
+    quicksort([1, 2, 3]) # [1, 2, 3]
+    quicksort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    quicksort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+Same as for [Task 18](#Task_18)
