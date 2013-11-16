@@ -777,14 +777,217 @@ Replace all of the ellipses (`...`)
 <br/><a id="Tasks_17_to_20"></a>
 ## Tasks 17-20: Sorting lists
 
+Sorting lists is a task that a lot of time has been spent trying to master, in
+the computing world. There are several ways to sort the list, but we are going
+to look at some simple options here that are easy to understand.
+
+Neither of the implementations you reach will be perfect or very efficient, but
+they will capture the essence of the task (the *algorithm*) and they will work.
+The first algorithm is rarely used in the real world, although the second is
+very popular, in some of its other forms.
+
 <br/><a id="Task_17"></a>
 ### Task 17: Removing the smallest element
+
+#### Instructions:
+
+Create a function called `remove_min` that, when given a list, finds its minimal
+element and deletes it from the list, returning the element it deleted.
+
+You will find that this function is very similar to your previous function,
+`min_list`, and you can use this fact to guide you in the implementation of
+`remove_min`.
+
+We will use this function later on, in a sorting algorithm called *selection
+sort*.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+**Note:** the `del` command, introduced for dictionaries, also works for lists
+in the natural way: `del lst[2]` will remove the element at index 2. You may
+find it helpful to use a `while` loop in this task because you will need to keep
+track of the index of the minimal element as well as the element itself, so you
+can delete it.
+
+    def remove_min(lst):
+        if len(lst) == 0: return # Nothing to remove for empty lists
+
+        min_i = 0
+        min   = lst[0]
+        i     = 1
+
+        ... # Loop through the list, finding the smallest element
+        ... # Delete the minimal element
+        return min
+
+    # Test Code
+    print "Testing"
+
+    test = [3,4,8,9,7]
+    print remove_min(test), test # 3 [4, 8, 9, 7]
+    print remove_min(test), test # 4 [8, 9, 7]
+    print remove_min(test), test # 7 [8, 9]
+    print remove_min(test), test # 8 [9]
+    print remove_min(test), test # 9 []
 
 <br/><a id="Task_18"></a>
 ### Task 18: Selection sort
 
+#### Instructions:
+
+If you look at the output from the testing of `remove_min` you will see
+that succesive calls to `remove_min` return the elements of list in
+increasing order. We can exploit this in our sorting algorithm: We remove the
+minimal element from the list, until there are no elements left, appending each
+in turn to the end of a new list.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def selection_sort(lst):
+        sorted = []
+        list_len = len(lst) # Store this now because our loop will make it
+                            # smaller
+
+        ... # Loop through the list removing minimal elements from `lst` and
+            # appending them to `sorted`.
+
+        return sorted
+
+    # Test Code
+    print "Testing"
+
+    selection_sort([]) # []
+    selection_sort([1, 2, 3]) # [1, 2, 3]
+    selection_sort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    selection_sort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+    []
+    [1, 2, 3]
+    [3, 4, 7, 8, 9]
+    [-8, -4, -2, 2, 4, 8]
+
 <br/><a id="Task_19"></a>
 ### Task 19: Partitioning a list
 
+#### Instructions:
+
+Partitioning involves taking a list, and producing two lists that together
+contain all the elements of the original in such a way that all the elements in
+one list are the elements less than some provided value (which we will call the
+`pivot`) and all the elements in the other list are greater than or equal to the
+pivot.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def partition(pivot, lst):
+        lt, gte = [], [] # Less than, and greater than or equal to lists
+
+        ... # Loop through lst, filling `lt` and `gte`
+
+        return lt, gte
+
+    # Test Code
+    print "Testing"
+
+    print partition(0, []) # ([], [])
+    print partition(1, [1, 2, 3]) # ([], [1, 2, 3])
+    print partition(2, [1, 2, 3]) # ([1], [2, 3])
+    print partition(4, [1, 2, 3]) # ([1, 2, 3], [])
+
+#### Expected Output:
+
+    ([], [])
+    ([], [1, 2, 3])
+    ([1], [2, 3])
+    ([1, 2, 3], [])
+
 <br/><a id="Task_20"></a>
 ### Task 20: Quicksort
+
+#### Instructions:
+
+Quicksort is a popular sorting algorithm that relies upon the principle of
+partitioning lists.
+
+ * Given a particular pivot element in the list (for convenience, let us just
+   use the first element) partition the **rest** of the list according to the
+   pivot.
+ * Now if we slot the pivot element in between the elements less than it and
+   greater than or equal to it, we find the pivot is in the *right place in the
+   list*.
+ * But the two lists provided by partition are not in sorted order, so how do we
+   deal with them? Well, we use our `quicksort` function to sort those too.
+ * Additionally, we say that lists with one or fewer elements are trivially
+   sorted, so we can just return them without doing any work.
+
+Use the hints above to define a function `quicksort` that uses partition to sort
+the list provided to it.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace the ellipses (`...`)
+
+**Note:** It may be useful to know that python has a feature that allows you to
+access a part of a list, i.e. `lst[n:]` means the elements from index
+`n` onwards. This may be useful when trying to get all the elements bar the
+first (which we use as the pivot).
+
+    def quicksort(lst):
+        # Lists of length 1 or 0 are already sorted, just return them
+        if len(lst) <= 1: return lst
+
+        pivot = ... # The first element
+        left, right = partition(pivot, ...) # Partition the rest of the list
+
+         # Sandwich the pivot between the sorted left and right sides
+        return ... + [pivot] + ...
+
+    # Test Code
+    print "Testing"
+
+    quicksort([]) # []
+    quicksort([1, 2, 3]) # [1, 2, 3]
+    quicksort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    quicksort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+Same as for [Task 18](#Task_18)
