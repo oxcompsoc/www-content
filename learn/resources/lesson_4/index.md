@@ -585,7 +585,7 @@ Replace all of the ellipses (`...`).
 Create a function `sum_list_of_lists`, that, when given a list of lists, will
 sum all of the values inside all of the lists together, and return the value.
 
-**Hint:** You will probably want to have a `for` loop inside a `for` loop fo
+**Hint:** You will probably want to have a `for` loop inside a `for` loop for
 this task.
 
 #### What you need to know:
@@ -631,7 +631,7 @@ Replace all of the ellipses (`...`).
 
 #### Instructions:
 
-Create a function `flatten_list`, that, when given a list of lists, produces
+Create a function `flatten`, that, when given a list of lists, produces
 a list containing the same elements, all in one list.
 
 i.e. `[[1, 2], [3]]` becomes `[1, 2, 3]`
@@ -778,7 +778,7 @@ Replace all of the ellipses (`...`)
 ## Tasks 17-20: Sorting lists
 
 Sorting lists is a task that a lot of time has been spent trying to master, in
-the computing world. There are several ways to sort the list, but we are going
+the computing world. There are several ways to sort lists, but we are going
 to look at some simple options here that are easy to understand.
 
 Neither of the implementations you reach will be perfect or very efficient, but
@@ -813,10 +813,11 @@ sort*.
 Replace all of the ellipses (`...`)
 
 **Note:** the `del` command, introduced for dictionaries, also works for lists
-in the natural way: `del lst[2]` will remove the element at index 2. You may
-find it helpful to use a `while` loop in this task because you will need to keep
-track of the index of the minimal element as well as the element itself, so you
-can delete it.
+in the natural way: `del lst[2]` will remove the element at index 2.
+
+**Note:** you may find it helpful to use a `while` loop in this task because you
+will need to keep track of the index of the minimal element as well as the
+element itself, so you can delete it.
 
     def remove_min(lst):
         if len(lst) == 0: return # Nothing to remove for empty lists
@@ -895,7 +896,7 @@ Partitioning involves taking a list, and producing two lists that together
 contain all the elements of the original in such a way that all the elements in
 one list are the elements less than some provided value (which we will call the
 `pivot`) and all the elements in the other list are greater than or equal to the
-pivot.
+`pivot`.
 
 #### What you need to know:
 
