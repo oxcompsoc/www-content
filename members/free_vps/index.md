@@ -1,5 +1,7 @@
 [meta title="Free VPSs" header="Free Virtual Private Servers for Members" /]
 
+<a href="http://www.elastichosts.com/" target="_blank"><img src="/members/free_vps/elastichosts.png" alt="Elastic Hosts Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" /></a>
+
 ## What's the deal?
 
 [ElasticHosts](http://www.elastichosts.com/) is generously offering any Compsoc member who can make good use of it a free Virtual Machine (VM) for the duration of their studies at the University. Please not this is only available to **current** students of the University of Oxford.
