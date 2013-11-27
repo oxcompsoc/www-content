@@ -1,6 +1,6 @@
 [meta title="Free VPSs" header="Free Virtual Private Servers for Members" /]
 
-<a href="http://www.elastichosts.com/" target="_blank"><img src="/members/free_vps/elastichosts.png" alt="Elastic Hosts Logo" style="display: block; max-width: 400px; margin: 0 auto; width: 100%;" /></a>
+<a href="http://www.elastichosts.com/" target="_blank"><img src="/members/free_vps/elastichosts.png" alt="Elastic Hosts Logo" style="display: block; max-width: 374px; margin: 0 auto; width: 100%;" /></a>
 
 ## What's the deal?
 
