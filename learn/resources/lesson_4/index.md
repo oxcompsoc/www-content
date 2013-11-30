@@ -102,6 +102,8 @@ order** as they have increasing difficulty and less hints as you go on.
 * [Task 19: Partitioning a list](#Task_19)
 * [Task 20: Quicksort](#Task_20)
 
+#### [Advanced Tasks](#Advanced)
+
 <br/><a id="Tasks_1_to_4"></a>
 ## Tasks 1-4: Basic `for` Loops
 
@@ -992,3 +994,13 @@ first (which we use as the pivot).
 #### Expected Output:
 
 Same as for [Task 18](#Task_18)
+
+
+<br/><a id="Advanced"></a>
+## Advanced Tasks
+
+Congratulations if you have got this far and completed all of the tasks, we
+have not actually added any more of our own tasks, but you are probably ready
+to have a go at some challenges from [Project
+Euler](http://projecteuler.net/problems). There will be plenty to keep you
+going there!

@@ -22,9 +22,9 @@ will be available to come around and help you when you get there!
 
 ### [[lesson_3]]
 
-## Content that is yet to be covered:
-
 ### [[lesson_4]]
+
+<!--## Content that is yet to be covered:-->
 
 ## Learn out-side of our course
 
