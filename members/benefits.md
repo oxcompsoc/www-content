@@ -2,7 +2,7 @@
 
 Members get a large number of benefits (for the duration of their membership):
 
-* Access Members-Only events (such as paintballing parties)
+* Access Members-Only events (such as paintballing parties and geek night)
 * Vote at General Meetings (help decide the future of CompSoc)
 * Become Eligible to win prizes at competitions
 * Be able to run for a place on the CompSoc Committee

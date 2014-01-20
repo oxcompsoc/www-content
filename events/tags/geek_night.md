@@ -1,3 +1,5 @@
+**Note: As of Hilary 2014, this is a members only event.**
+
 Our Weekly-Geek Nights are an opportunity to spend the evening hanging out with
 people who appreciete the finer things in life! They tend to mainly be sitting
 around chatting about various topics (anything from technology, to psycology,
