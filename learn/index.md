@@ -33,6 +33,10 @@ join the first one.
 
 [embed page="facebook_links" /]
 
-## Scheduled Events:
+## Upcomming Events:
 
-[events tags="learn" /]
+[events when="today_onwards" tags="learn" /]
+
+## Past Events:
+
+[events when="past" tags="learn" /]
