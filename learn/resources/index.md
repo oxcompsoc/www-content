@@ -27,7 +27,7 @@ has been moved further on, and we have a new section, OOP)*
 
 ### [[lesson_4]]
 
-### [[lesson_5]]
+<!--### [[lesson_5]]-->
 
 <!--## Content that is yet to be covered:-->
 
