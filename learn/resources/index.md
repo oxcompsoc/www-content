@@ -8,11 +8,14 @@ a helper...
 **Note: Throughout the course being run, we will be uploading more and more content
 here.**
 
-## Content covered in sessions so far:
+## Course Content:
 
 If you haven't been attending our sessions, or are behind, don't worry. You can
 come along and work from the start, or from where you currently are. Helpers
-will be available to come around and help you when you get there!
+will be available to come around and help you no matter which stage you're at!
+
+*Note: The course has been moved around a little (the text based adventure game
+has been moved further on)*
 
 ### [[lesson_0]]
 
@@ -23,6 +26,8 @@ will be available to come around and help you when you get there!
 ### [[lesson_3]]
 
 ### [[lesson_4]]
+
+### [[lesson_5]]
 
 <!--## Content that is yet to be covered:-->
 

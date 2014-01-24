@@ -1,167 +1,43 @@
-[meta title="Lesson 3: A Text-Based Adventure Game" /]
+[meta title="Lesson 3: Doing Useful Things - Processing Data" /]
 
 [embed page="/learn/resources/highlight.js/embed" /]
 
+## Our Progress so Far...
+
+So we've taught you some of the basics behind writing computer programs:
+
+* Creating a python program as a
+  [`.py` text file](../lesson_1/#First_Python_File) (with a text editor), and
+  running it
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Mathematical Operations](../lesson_1/#Mathematical_Operations)
+* [Types](../lesson_2/#Types)
+* [String Manipulation](../lesson_2/#Manipulating_Strings)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop)
+* [**while** loops](../lesson_2/#While_Loop)
+* [**if** Statements](../lesson_2/#If_Statements) and
+  [**booleans**](../lesson_2/#Bool_Type)
+* Console [Input](../lesson_2/#Console_Input) and
+  [Output](../lesson_2/#Console_Output)
+
+Hopefully at this stage, you should feel quite confident with each of these. If
+there is something that you are not 100% sure about, have a quick read over
+that section.
+
 ## The Goal of This Lesson
 
-In this lesson, we will be taking a little bit of a different approach. We will
-be working towards the goal of creating a text based adventure game. There will
-be less guidance, so that you can try and use the skills that you have learned
-in the lessons so far.
+This lesson will get you to use these techniques in a number of tasks of
+increasing difficulty. The goal is that hopefully, practicing these techniques
+over and over again to solve different problems will enable you to work out how
+you can approach solving real-life problems you will come accross while coding
+in the wild.
 
-We will give you tasks to complete, and tips, and helpers will be available to
-answer any questions during the lesson.
+Before starting the main tasks, there is one last thing we would like to
+introduce to you...
 
-## Before we Start
-
-There are a couple more interesting things that we would like to teach you
-before getting started...
-
-<a id="Dictionaries"></a>
-### Introducing dictionaries
-
-Try finding the type of `{'name': 'James', 'level':9001 }`. You'll see it's
-something new, a `dict`.
-
-The `dict` type is also referred to as a "dictionary" or "hashtable". They are a
-comma separated list of keys and values in the form `key1:value1, key2:value2,
-key3:value3, ...` surrounded by a pair of curly braces `{ ... }`.
-
-#### Looking up values
-
-Lets take a look at a larger example:
-
-    mydict = {'name': 'James', 'level':9001}
-    print(mydict['name'])
-    print(mydict)
-
-Can you see what's happening here?
-
-Like lists, we can use square brackets to *index* a dictionary, so, just like
-`elems[0]` will return the first element of the `elems` list, if we write
-`mydict['name']` it means "Look inside `mydict`, access the key `'name'` and
-give me its corresponding value". Similarly, we can replace the value
-corresponding to the key `'name'` with `mydict['name'] = 'newvalue'`.
-
-What happens if you try to access the value of a key that does not exist? Can
-you use `=` to assign a value to a key the does not exist in the dictionary?
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-  What happens if you try to access the value of a key that does not exist?
-  Can you use <code>=</code> to assign a value to a key the does not exist in the dictionary?
-  </div>
-</div>
-
-As you saw in the task, we get a `KeyError` when we try to access a key that
-doesn't exist.
-
-#### Checking values exist
-
-To get around this there is the `in` keyword. You can use `in` to tell you
-whether a given key has a value in the dictionary and you can use `not in` to
-do the opposite:
-
-    mydict = { 'name': 'James', 'level': 9001 }
-
-    'name'     in     mydict # => True
-    'name'     not in mydict # => False
-    'lastName' in     mydict # => False
-    'lastName' not in mydict # => True
-
-#### Adding values
-
-As you saw in the task, it is however possible to assign a value to a key that
-was not previously in the dictionary using `=`, for example:
-
-    mydict = { } # The empty dictionary
-    mydict['name'] = 'james'
-
-    print(mydict)
-    print(mydict['name'])
-
-When the above is run, it should print the following:
-
-    {'name': 'James'}
-    James
-
-The values can actually be any object, and in the example we mapped the `'name'`
-key to a string and the `'level'` key to an integer. You can also have duplicate
-values, so multiple keys can map to the same value. However you may not have
-duplicate keys (E.g. Each key maps only to one value at a time):
-
-    # Multiple keys with the same value (allowed)
-    mydict = {'a': 1, 'b': 1}
-
-    print mydict
-    # => {'a': 1, 'b': 1}
-
-    # Multiple values for the same key (not allowed)
-    mydict = { 'a':1, 'a': 2}
-    print mydict
-    # => {'a': 2}
-
-#### Modifying values
-
-As you can see, python decided to automatically choose the last value assigned
-to the `'a'` key, which was `2`. This behaviour is what allows you to
-*overwrite* existing values in a dictionary, if you assign a value to a key that
-already exists in the dictionary:
-
-    mydict = {'name': 'Joe'}
-
-    print mydict
-    # => {'name': 'Joe'}
-
-    mydict['name'] = 'James'
-
-    print mydict
-    # => {'name': 'James'}
-
-#### Key value types
-
-You can use more than just strings as keys in dictionaries, experiment with
-other values as key types and see which ones work and which ones don't.
-
-<div class="panel panel-primary">
-    <div class="panel- heading"><strong>Task</strong></div>
-    <div class="panel-body">
-      <p>
-        Find one type other than string that can be used for keys, and one type
-        that cannot.
-      </p>
-      <p>
-        <strong>Hint</strong> If you choose a key type that is not allowed you
-        will get an error that begins <code>TypeError: unhashable type</code>
-        and tells you the name of the type you tried to use.
-    </div>
-</div>
-
-#### Deleting values
-
-You can remove an entry from the dictionary using the `del` keyword:
-
-    mydict = {'name': 'James', 'level': 9001}
-
-    del mydict['name']
-
-    print mydict
-    # => {'level': 9001}
-
-Watch out though! You'll get a `KeyError` if the key wan't in the dictionary
-to begin with.
-
-#### Uses of dictionaries
-
-So why might we want to use a dictionary? In the game we'll be creating later,
-we're going to need some way of keeping track of information regarding the
-player. A dictionary is an ideal type for containing all information relevant to
-the player in one place. We could have several separate variables, but that
-rapidly gets tedious, especially when we throw functions into the mix.
-
-<a id="Functions"></a>
-### Functions
+## Functions
 
 Start by typing to following into your text editor, then run it in python:
 
@@ -174,9 +50,9 @@ Start by typing to following into your text editor, then run it in python:
 We just defined a "function" called `sayhi`. You can call a function by using
 its name followed by parentheses. In this case, it's `sayhi()`.
 
-Just like with loops, here the indentation is important. The "body" of the
-function is all the code indented to the right immediately below the function
-name.
+Just like with loops and if statements, here the indentation is important. The
+"body" of the function is all the code indented to the right immediately below
+the function name.
 
 So what is going on in the above example?
 
@@ -212,10 +88,10 @@ Lets look at a slightly different function:
             return -x
 
     print absolute(5)
-    # => 5
+        # => 5
 
     print absolute(-5)
-    # => 5
+        # => 5
 
 This function, called `absolute` takes a parameter `x`. When the function is
 called, for example with  `absolute(5)`, then `x` is assigned the value `5`, and
@@ -243,8 +119,8 @@ printing `5` again.
 We write `def functionName(param1, param2, ...):` to define a function.
 
  * You can have zero or more parameters.
- * Add in the function code below the definition, remembering to indent it
-   further right than the definition (by atleast 4 spaces).
+  * Add in the function code below the definition, remembering to indent it
+     further right than the definition (by atleast 4 spaces).
 
 #### Calling a function
 
@@ -315,9 +191,9 @@ Use the function below to complete the challenge:
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Challenge</strong></div>
   <div class="panel-body">
-   Can you create a function called max_list which takes in an list of ints as a parameter, and returns the largest int in the list.
-   <br/>
-   <strong>Hint</strong> use a for loop! You may need to look over materials in the previous lessons.
+    Can you create a function called max_list which takes in an list of ints as a parameter, and returns the largest int in the list.
+    <br/>
+    <strong>Hint</strong> use a for loop! You may need to look over materials in the previous lessons.
   </div>
 </div>
 
@@ -351,7 +227,7 @@ examples:
 
 This example shows the important behaviour of scoped variables. What do you
 think the output will be? Now run the code, and try uncommenting the lines
-`#print(number)` and `#print(x)` to see what happens.
+`# print(number)` and `# print(x)` to see what happens.
 
 The `printAndAddOne`
 function only accesses the variable number, and this is allowed, since number is
@@ -395,531 +271,973 @@ each line. If it still doesn't make sense, then ask a helper to explain!
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
-  Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function.
+    Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function.
   </div>
 </div>
 
 
-## Let's Start Making a Game
+## The Tasks
 
-From this point onwards we want you to experiment as much as possible! Make
-the game your own, create your own world and allow the user to interact with it
-exactly as you like!
+The tasks given in this lesson are the kind of things you will come accross
+when trying to write *almost any program*. When you are writing a program,
+whether it is a smartphone app, a computer program, something controlling a
+radio-controlled hellicopter, or even just a website... you will **need to
+process data**.
 
-We will be making suggestions and giving ideas for you to try and implement,
-but we encourage you to think of completely unique ideas and use your knowledge
-so far to try and do them.
+Being able to come up with code that can process data in a particular way is a
+**vital skill** to being a good programmer, and you can only get better with
+**more practice and experience**.
 
-Lets create your first text-based adventure game!
-
-### What is a Text-Based Adventure Game?
-
-Back in the days when people only had terminals (like what you type `python` in
-to, to run your programs), games required a bit more imagination. They were
-essentially an interactive story, in which the areas were described to you, and
-you typed in instructions like `go N`, `pickup coins` or `describe` to interact
-with the game and change the path of the story.
-
-To solidify the concepts you've been learning in this course so far, we'll make
-a small text-based adventure of our own. We'll walk you through creating some
-bits, but towards the end, we'll just give you some suggestions and leave you to
-it!
-
-### Structuring the Game
-
-#### Data Structures
-
-It's important when writing a program, to design it first, and deciding upon
-its structure is a key aspect of this. Firstly, let us think about the
-information we'll need to store:
-
- * A map of locations
-    - the location name
-    - its description
-    - its neighbours
- * Information about the player
-    - their name
-    - how much health they have
-    - where they currently are
-
-Dictionaries, which you have just learnt about, are perfect for both these
-usecases. We will have a dictionary of `locations` that store the description
-and neighbours for a location. We can access the location with its name as a
-key. We will also keep a dictionary of the player's name, health and current
-location, called `players`.
-
-#### Control Flow
-
-Another consideration is the control flow of the program. The basic setup will
-be that we print the description of the current location, request an input from
-the user, process the input as a command, update the player's location/health
-etc and repeat until the player has died or decided to quit.
-
-The "...and repeat" part should give us a clue as to what we'll be using. We'll
-use `while` loop, like so:
-
-    while player['health'] > 0:
-        describe_location()
-        get_input()
-        process_input()
-
-we'll replace the body of the loop with something more concrete a bit later on,
-but for now these placeholders will do.
-
-#### User Input
-
-Something that isn't necessarily a concern for every program but is for this one
-is how we are going to deal with user input. For simplicity's sake, we'll split
-a valid user input in to two bits: the command, and some arguments, e.g.:
-
- * `describe` will print the description for the current location again.
- * `quit` will exit the game.
- * `go N`, `go E`, `go S` and `go W` will move the player in the appropriate
-      compass direction.
-
-So `describe` and `quit` are just commands with no argument, and `go` is a
-command that takes a single argument, which is the direction to go in.
-
-When we add further commands later, we will follow this same pattern, so we can
-avoid code repetition, and use the same code to process every user input.
-
-### A Starting Point
-
-Bearing the above section in mind, here is a template to start your game
-with. There are some blank sections that need filling in, and some
-explanations of what should go there below it.
-
-    # Functions
-
-    def quit():
-        "Goodbye. Thanks for playing!"
-        exit()
-
-    # Initialisation
-
-    # Our Map of Locations
-    locations = {
-         'Large Gate': {
-            'description': "An ominous gate stands before you.",
-            'neighbours': {}
-        }
-    }
-
-    # Player Information
-    player = {
-        'name': '',
-        'health': 100,
-        'location': BLANK_1
-    }
-
-    print "My Amazing Text Adventure"
-    print "========================="
-    print ""
-
-    # Get the player's name
-    BLANK_2
-
-    # Main Loop
-    while player['health'] > 0:
-        input = raw_input("What do you do? ")
-        command = BLANK_3
-
-        if command[0] == 'quit':
-            quit()
-        else
-            print "I don't know how to do that."
+All of these tasks come with **Test Code** that checks to see if the final code
+of the task works as expected.
 
 <div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
+  <div class="panel-heading"><strong>Note</strong></div>
   <div class="panel-body">
-    <p>
-      Replace <code>BLANK_1</code>, <code>BLANK_2</code> and
-      <code>BLANK_3</code> according to the hints below.
-    </p>
-    <p>
-      <strong>Hint 1</strong> we want the player to start by the <code>'Large
-      Gate'</code>, so the player information held in the <code>player</code>
-      variable should reflect that to begin with.
-    </p>
-    <p>
-      <strong>Hint 2</strong> currently the player name is empty. Add some
-      code at <code>BLANK_2</code> to ask the player for their name, and store
-      it under the <code>'name'</code> key of the <code>player</code>
-      dictionary.
-    </p>
-    <p>
-      <strong>Hint 3</strong> this one is a bit more difficult. We want to
-      split the <code>input</code> string across every space character, so
-      that the first item in the resulting list is the action, and the rest of
-      the list consists of the arguments for the action (should there be any).
-      <br/>
-      The function you want for this task is called
-      <code>str.split(...)</code>, and it is defined for any string
-      <code>str</code>. But we have left out the specific details of the
-      function (like what the arguments are and what they do), so you have to
-      look at the documentation to find out yourself. The documentation can be
-      found
-      <a href='http://docs.python.org/2/library/stdtypes.html#str.split'>
-          here
-      </a>.
-    </p>
-    <p>
-      In future, when you are unsure about whether a particular function
-      exists or how to use it, try having a look at this documentation to
-      figure it out. Learning to use documentation whilst programming is an
-      invaluable skill that comes with practise.
-    </p>
+    We <strong>strongly recommend</strong> you save your answer to each task as
+    a separate file! Create a new folder called <code>lesson_4</code> and save
+    each of the tasks in there. For example, use the filename
+    <code>001.py</code> for the first task.
   </div>
 </div>
 
-**Note:** our command system is currently case sensitive, which means that, for
-example, the game will only quit if we ask it to `'quit'` as opposed to `'Quit'`
-or `'qUiT'`. This is something to bear in mind and possibly improve upon in the
-future (Maybe we shouldn't have case sensitive commands, and if we don't want
-them, how do we go about accepting all possible combinations of case in a neat
-way?).
+Here's a list of the tasks for this lesson, we recommend you **try them in
+order** as they have increasing difficulty and less hints as you go on.
 
-### Improving your Game
+#### [Tasks 1-4: Basic `for` Loops](#Tasks_1_to_4)
 
-Your game is up and running now, but not really playable. You can't really do
-anything other than quit, so we should change that by adding some nice features.
+* [Task 1: Minimum Item of a List](#Task_1)
+* [Task 2: Maximum Item of a List](#Task_2)
+* [Task 3: Check if inside list](#Task_3)
+* [Task 4: Number of Instances in a List](#Task_4)
 
-#### The `describe` command
+#### [Tasks 5-8: Basic `while` Loops](#Tasks_5_to_8)
 
-Currently you're playing blind. The game doesn't tell you where you are, or what
-it looks like, so we should change that. Before we ask the player what they want
-to do, we should tell the player where they are and describe their current
-location to them. Additionally, if they forget while they're playing, they
-should be able to ask the game to `describe` their current location.
+* [Task 5: Minimum Item of a List (Using a `while` Loop)](#Task_5)
+* [Task 6: Maximum Item of a List (Using a `while` Loop)](#Task_6)
+* [Task 7: Check if inside list (Using a `while` Loop)](#Task_7)
+* [Task 8: Number of Instances in a List (Using a `while` Loop)](#Task_8)
 
-Firstly, we will add a function, under the `# Functions` comment:
+#### [Tasks 9-12: More `for` Loops](#Tasks_9_to_12)
 
-    def describe(loc_name, locs):
-        location = locs[loc_name]
-        BLANK_1
+* [Task 9: Sum the elements in a list](#Task_9)
+* [Task 10: All True?](#Task_10)
+* [Task 11: At least one True?](#Task_11)
+* [Task 12: Sum the values of lists of lists](#Task_12)
 
-and then we will change the body of our main loop like so:
+#### [Tasks 13-16: Improving `sum_list_of_lists`](#Tasks_13_to_16)
 
-    while player['health'] > 0:
-        describe(BLANK_2, locations)
-        input = raw_input("What do you do? ")
-        command = ...
+* [Task 13: Flatten a list of lists](#Task_13)
+* [Task 14: Using `sum_list` in `sum_list_of_lists`](#Task_14)
+* [Task 15: Using `flatten` in `sum_list_of_lists`](#Task_15)
+* [Task 16: Generalising `flatten`](#Task_16)
 
-        if command[0] == 'quit':
-            quit()
-        elif command[0] == 'describe':
-            continue
-        else:
-            print "I don't know how to do that."
+#### [Tasks 17-20: Sorting lists](#Tasks_17_to_20)
 
-**Note:** the `continue` keyword is used to skip ahead to the next iteration of
-the loop. We use this rather than the `describe` function we are defining
-because we describe the location at the beginning of each loop anyway (so
-calling `describe` inside the `if` statement would result in it being printed
-twice in succession, try it for yourself to verify).
+* [Task 17: Removing the smallest element](#Task_17)
+* [Task 18: Selection sort](#Task_18)
+* [Task 19: Partitioning a list](#Task_19)
+* [Task 20: Quicksort](#Task_20)
 
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Replace <code>BLANK_1</code> and <code>BLANK_2</code> to make your game
-      print a description of the player's current environment.
-    </p>
-    <p>
-      <strong>Hint 1</strong> the <code>describe</code> function should print
-      out the name of the location (<code>loc_name</code>) as well as the
-      description (found in the <code>location</code> dictionary).
-    </p>
-    <p>
-      <strong>Hint 2</strong> we should describe the player's current location
-      which should be in the player's dictionary under the
-      <code>'location'</code> key (So this is what we should pass to the
-      <code>describe</code> function).
-    </p>
-  </div>
-</div>
+#### [Advanced Tasks](#Advanced)
 
-#### The `help` command
+<br/><a id="Tasks_1_to_4"></a>
+## Tasks 1-4: Basic `for` Loops
 
-Now we can see where we're going! But players don't know what they can do, so
-let us tell them with a `help` command. Whenever they type `help` into the game
-we will print a list of commands they can use.
+Tasks 1-4 will be performing calculations on lists using `for` loops.
 
-Once again, we add a function under the `# Functions` heading:
+<br/><a id="Task_1"></a>
+### Task 1: Minimum Item of a List
 
-    def help():
-        command_descriptions = {
-            "help": "Show this help page.",
-            "quit": "Quit the game.",
-            "describe": "Describe the current location.",
-            "go": "Walk either N, S, E or W, e.g. 'go N'"
-        }
-        BLANK_1
+#### Instructions:
 
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Add a condition to the <code>if</code> statement in the main loop, similar
-      to the one's for the <code>'quit'</code> and <code>'describe'</code>
-      commands, to check whether the user asked for <code>'help'</code>, and
-      fill its body with the appropriate function call.
-    </p>
-    <p>
-      <strong>Hint 1</strong> The body to the <code>help()</code> function is,
-      for the most part, complete. Simply loop through the
-      <code>command_descriptions</code> dictionary and print each command name
-      along with its description.
-    </p>
-  </div>
-</div>
+Write a function `min_list` that when given a list of numbers, will find the
+minimum number in the list. Do this using a `for` loop.
 
-#### The `go` command
+#### What you need to know:
 
-You may have noticed we were a bit pre-emptive when we defined the `help`
-command: We told people there is a `go` command, but we haven't provided one
-yet. Not to worry, we'll get started on it straight away, seeing as it's rather
-essential for a text-based adventure.
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop)
+* [**if** Statements](../lesson_2/#If_Statements)
+* [Functions](../lesson_3/#Functions)
 
-##### Building our Map
+#### Boilerplate Code:
 
-Firstly, we need to add some locations to our adventure. Currently we have only
-one, so there isn't much motivation to define a movement command, so let's add
-a location call `'Town'`, and have it be north of the `'Large Gate'`.
+Replace all of the ellipses (`...`).
 
-To do this we must update the `'Large Gate'`'s `'neighbours'` dictionary as
-follows:
+    def min_list(lst):
+        min = ... # What should we set this value to to begin with?
 
-    'neighbours': {
-        'N': 'Town'
-    }
+        for item in lst: # iterate over every item in the list
+            print item # print statement to show you what's happening
+            ... # What needs to go here?
 
-And we should also add an entry into the `locations` dictionary for the `'Town'`
-location:
+        return min
 
-    'Town': {
-        'description':"A bustling town centre with a wooded area to the west."
-        'neighbours': {
-            'S':'Large Gate'
-        }
-    }
+    # Test Code
+    print "Testing..."
 
-You'll notice that I also added the `'Large Gate'` as the southern neighbour of
-`'Town'`. This makes sense in a normal world, but this is your adventure game,
-so don't feel as though physics should restrain you. If on the other hand you do
-want behaviour like that of the normal world, you will have to remember to add
-these complementary neighbours.
+    print min_list([5, 2, 7, 1, 9]) # This should be 1
+    print min_list([5, 2, -7 ,1 ,9]) # This should be -7
+    print min_list([900]) # This should be 900
+    print min_list([-900]) # This should be -900
 
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    Add some of your own locations and link them up as neighbours. To start you
-    off, the description for <code>'Town'</code> hints at a wooded area to the
-    west.
-  </div>
-</div>
+#### Expected Output
 
-**Note:** Like our commands, location names are also case sensitive, meaning
-`'Town'` is a different location from `'town'`. This may not be a good idea,
-but luckily only we the programmer have to deal with it, so just remember to
-take care with capitalisation when writing out what is neighbouring what.
-
-##### `move()`
-
-Now we have places to go to, we can define our move function, like so:
-
-    def move(player, locs, cmd):
-        if len(cmd) < 2:
-            print "You need to specify a direction to go in: N, E, S or W."
-            print "E.g. 'go N'"
-            return
-
-        dir = cmd[1]
-        neighbours = locs[player['location']][BLANK_1]
-
-        if BLANK_2:
-            player['location'] = neighbours[dir]
-        else:
-            print "There's no route in the direction: " + dir + "!"
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      <strong>Hint 1</strong> Which key for a given location, produces its
-      dictionary of neighbours?
-    </p>
-    <p>
-      <strong>Hint 2</strong> Before we set the player's new location, we must
-      check whether there is actually a route in that direction, by checking
-      whether the provided direction (<code>dir</code>) is a key in the
-      <code>neighbours</code> dictionary.
-    </p>
-    <p>
-      After completing the <code>move</code> function, we must connect it up to
-      the <code>if</code> statement in our main loop. As with the previous
-      commands, this is achieved by adding a condition to the if statement
-      (this time for the <code>'go'</code> command) and then making the
-      appropriate function call. In this case, the three parameters to
-      <code>move</code> are the <code>player</code> dictonary, the
-      <code>locations</code> dictionary, and finally <code>command</code>
-      which holds the entire command as a list of words.
-    </p>
-    <p>
-      Try your game out and see how the move command works, to make sure you
-      can get to every you expected to.
-    </p>
-  </div>
-</div>
-
-### Tasks
-
-Here are a selection of features you can try and add to your game. You don't
-have to follow this list exactly, and are ancouraged to use your imagination!
-
-#### Bonus: Improving `describe`
-
-It would be nice if we could tell which was the name of the location and
-which was the description if we could underline the name in some way.
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Print a line of <code>=</code> signs as long as the name, underneath
-      the name of the location in the <code>describe()</code> function.
-    </p>
-    <p>
-      <strong>Hint</strong> <code>str * n</code> is the string <code>str</code>
-      concatenated with itself <code>n</code> times.
-    </p>
-  </div>
-</div>
-
-It might also be useful to know the names of the neighbours of the current
-location, when describing them.
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Augment the <code>describe()</code> function to also print the neighbours
-      for the location in question, along with their directions.
-    </p>
-  </div>
-</div>
-
-#### Adding objects at locations
-
-We might want to add objects to different locations that the player will be
-able to interact with. For example, coins, or a chest, or a sword (if the theme
-for your game is fantasy).
-
-To do this, we suggest implementing to new dictionaries:
-
-* `objects` which contains information about every single object inside the
-  game, regardless of where it is found.
-* `object_locations` which is a dictionary, with locations as the key, and the
-  value should be a `list` of objects from the objects variable.
-
-E.G:
-
-    objects = {
-      "Chest": {...},
-      "Sword": {...}
-    }
-
-    object_locations = {
-      "Town": ["Chest", "Sword"]
-    }
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Create the <code>objects</code> variable. We want the values of
-      everything in this dictionary to also be a dict. What should the keys of
-      <strong>these</strong> dictionaries be? I.E: What information do we want
-      to store about object, maybe a description of it? And whether a user will
-      be able to pick it up?
-    </p>
-  </div>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Create the <code>object_locations</code> variable, and add some objects
-      to some locations.
-    </p>
-  </div>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task - Looking Around</strong></div>
-  <div class="panel-body">
-    <p>
-      Create a new <code>look</code> command for the user, which will display
-      information about the neighbors of your current location, and any objects
-      currently in your location.
-    </p>
-  </div>
-</div>
-
-#### Interacting with objects
-
-We want the user to be able to pick up and drop objects, create a new list in
-the `player` dict that will store a list of all of the objects the player is
-currently holding, and fill it with any objects you want the user to start
-with. Call this list `"inventory"`.
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task</strong></div>
-  <div class="panel-body">
-    <p>
-      Create the <code>"inventory"</code> list in the <code>player</code> dict.
-    </p>
-  </div>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task - Inspecting the Inventory</strong></div>
-  <div class="panel-body">
-    <p>
-      Create a new command, <code>inventory</code>, which will allow the user
-      to list the objects which they have stored in their inventory.
-    </p>
-  </div>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task - Picking up Objects</strong></div>
-  <div class="panel-body">
-    <p>
-      A user may want to pick up objects at a location and put them into their
-      inventory. Implement a <code>pickup</code> command that will allow a user
-      to pick up an object <strong>only from the current location</strong>. We
-      want a way for the user to specify which object they want to pick up, the
-      way you do this is up to you.
-    </p>
-    <p>
-      <strong>Hint:</strong> you will want to remove the object from the
-      <code>object_locations</code> variable, and add it to the
-      <code>player["inventory"]</code> list.
-    </p>
-  </div>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading"><strong>Task - Dropping Objects</strong></div>
-  <div class="panel-body">
-    <p>
-      Implement a <code>drop</code> command that does the opposite of the
-      <code>pickup</code> command.
-    </p>
-  </div>
-</div>
+    1
+    -7
+    900
+    -900
 
 
 
+<br/><a id="Task_2"></a>
+### Task 2: Maximum Item of a List
+
+#### Instructions:
+
+Write a function `max_list` that when given a list of numbers, will find the
+maximum number in the list. Do this using a `for` loop.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop)
+* [**if** Statements](../lesson_2/#If_Statements)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def max_list(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print max_list([5, 2, 7, 1, 9]) # This should be 9
+    print max_list([-7, -3, -8]) # This should be -3
+    print max_list([900]) # This should be 900
+    print max_list([-900]) # This should be -900
+
+#### Expected Output
+
+    9
+    -3
+    900
+    -900
+
+
+<br/><a id="Task_3"></a>
+### Task 3: Check if inside list
+
+#### Instructions:
+
+Write a function `in_list` that when given a list of values (doesn't need to
+be numbers), and a value `x`, returns `True` if the value is inside the list,
+otherwise it returns `False`.
+
+**Note: You are not allowed to use the python `in` operator.**
+
+#### What you need to know:
+
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop)
+* [**if** Statements](../lesson_2/#If_Statements)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def in_list(lst, x):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print in_list([1, 2, 2, 6, 2, 9], 2) # This should be True
+    print in_list([1, 2, 2, 6, 2, 9], 1) # True
+    print in_list([1, 2, 2, 6, 2, 9], 9) # True
+    print in_list([1, 2, 2, 6, 2, 9], 10) # False
+    print in_list([1, 2, 2, 6, 2, 9], "cat") # False
+    print in_list([1, 2, 2, 6, 2, 9, "cat"], "cat") # True
+    print in_list(["cat"], "cat") # True
+    print in_list(["cat", [1], [2, 3]], [1]) # True
+    print in_list(["cat", [1], [2, 3]], [2]) # False
+
+#### Expected Output
+
+    True
+    True
+    True
+    False
+    False
+    True
+    True
+    True
+    False
+
+
+
+<br/><a id="Task_4"></a>
+### Task 4: Number of Instances in a List
+
+#### Instructions:
+
+Write a function `instances` that when given a list of values (doesn't need to
+be numbers), and a value `x`, returns the number of times that `x` appears in
+the list. Do this using a `for` loop.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Mathematical Operations](../lesson_1/#Mathematical_Operations)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop)
+* [**if** Statements](../lesson_2/#If_Statements)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def instances(lst, x):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print instances([1, 2, 2, 6, 2, 9], 2) # This should be 3
+    print instances([1, 2, 2, 6, 2, 9], 1) # 1
+    print instances([1, 2, 2, 6, 2, 9], 9) # 1
+    print instances([1, 2, 2, 6, 2, 9], 10) # 0
+    print instances([], 1) # 0
+    print instances(["dog", "cat", "cat", 1, 2, 3, "horse"], "cat") # 2
+    print instances([[1], [2], [2, 3], [1]], [1]) # 2
+    print instances([[1], [2], [2, 3], [1]], [2]) # 1
+    print instances([[1], [2], [2, 3], [1]], [3]) # 0
+
+#### Expected Output
+
+    3
+    1
+    1
+    0
+    0
+    2
+    2
+    1
+    0
+
+
+
+<br/><a id="Tasks_5_to_8"></a>
+## Tasks 5-8: Basic `while` Loops
+
+Tasks 5-8 will be doing tasks 1-4 but using `while` loops instead of `for`
+loops.
+
+Whenever you write a `for` loop, you can convert your code to use a `while`
+loop instead!
+
+**Example:**
+
+    for item in my_list:
+        print item
+
+Is the same as
+
+    index = 0
+    while index < len(my_list):
+        item = my_list[index]
+        print item
+
+        index += 1
+
+Basically, a `for` loop is a special kind of `while` loop that makes writing
+some code look much nicer. For the following exercises, we want you to use the
+technique given in the example above to try and understand what the `for` loop
+is doing, and convert it to a more complicated `while` loop.
+
+
+
+<br/><a id="Task_5"></a>
+### Task 5: Minimum Item of a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 1](#Task_1), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 1](#Task_1)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def min_list(lst):
+        min = ... # What should we set this value to to begin with?
+
+        index = 0
+        while index < len(lst):
+            item = lst[index]
+            print item
+
+            ... # What goes here?
+
+            index += 1
+
+        return min
+
+    # Test Code
+    print "Testing..."
+
+    print min_list([5, 2, 7, 1, 9]) # This should be 1
+    print min_list([5, 2, -7 ,1 ,9]) # This should be -7
+    print min_list([900]) # This should be 900
+    print min_list([-900]) # This should be -900
+
+#### Expected Output
+
+Same as [Task 1](#Task_1)
+
+
+
+<br/><a id="Task_6"></a>
+### Task 6: Maximum Item of a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 2](#Task_2), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 2](#Task_2)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 2](#Task_2)
+
+
+
+<br/><a id="Task_7"></a>
+### Task 7: Check if inside list (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 3](#Task_3), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 3](#Task_3)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 3](#Task_3)
+
+
+
+<br/><a id="Task_8"></a>
+### Task 8: Number of Instances in a List (Using a `while` Loop)
+
+#### Instructions:
+
+Do the same as [Task 4](#Task_4), except using a `while` loop instead of a
+`for` loop.
+
+#### What you need to know:
+
+* Everything for [Task 4](#Task_4)
+* [**while** loops](../lesson_2/#While_Loop)
+
+#### Boilerplate Code and Expected Output:
+
+Same as [Task 4](#Task_4)
+
+
+
+<br/><a id="Tasks_9_to_12"></a>
+## Tasks 9-12: More `for` Loops
+
+
+
+<br/><a id="Task_9"></a>
+### Task 9: Sum the elements in a list
+
+#### Instructions:
+
+Create a function `sum_list` that, when given a list of numbers, will return
+the sum of all of the numbers in that list
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables) (and
+  [manipulating them](../lesson_2/#Manipulating_Variables))
+* [Mathematical Operations](../lesson_1/#Mathematical_Operations)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def sum_list(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print sum_list([]) # 0
+    print sum_list([1]) # 1
+    print sum_list([-1]) # -1
+    print sum_list([1, 2, 3, 4, 5]) # 15
+    print sum_list([1, 2, 3, 4, 5, -4, -3, -2, -1]) # 5
+
+#### Expected Output
+
+    0
+    1
+    -1
+    15
+    5
+
+
+
+<br/><a id="Task_10"></a>
+### Task 10: All True?
+
+#### Instructions:
+
+Create a function `all_true` that, when given a list of values, will return
+`False` if there are any values in the list that are `False`, otherwise it
+should return `True`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [**if** Statements](../lesson_2/#If_Statements) and
+  [**booleans**](../lesson_2/#Bool_Type)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def all_true(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print all_true([]) # True
+    print all_true([True]) # True
+    print all_true([False]) # False
+    print all_true([True, False]) # False
+    print all_true([False, True]) # False
+    print all_true([True, True]) # True
+
+#### Expected Output
+
+    True
+    True
+    False
+    False
+    False
+    True
+
+
+
+
+
+
+<br/><a id="Task_11"></a>
+### Task 11: At least one True?
+
+#### Instructions:
+
+Create a function `one_true` that, when given a list of values, will return
+`True` only if there is at least one value in the list that is `True`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [**if** Statements](../lesson_2/#If_Statements) and
+  [**booleans**](../lesson_2/#Bool_Type)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def one_true(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print one_true([]) # False
+    print one_true([True]) # True
+    print one_true([False]) # False
+    print one_true([True, False]) # True
+    print one_true([False, False]) # False
+    print one_true([False, True]) # True
+    print one_true([True, True]) # True
+
+#### Expected Output
+
+    False
+    True
+    False
+    True
+    False
+    True
+    True
+
+
+<br/><a id="Task_12"></a>
+### Task 12: Sum the values of lists of lists
+
+#### Instructions:
+
+Create a function `sum_list_of_lists`, that, when given a list of lists, will
+sum all of the values inside all of the lists together, and return the value.
+
+**Hint:** You will probably want to have a `for` loop inside a `for` loop for
+this task.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`).
+
+    def sum_list_of_lists(lst):
+        ...
+
+    # Test Code
+    print "Testing..."
+
+    print sum_list_of_lists([]) # 0
+    print sum_list_of_lists([[], []]) # 0
+    print sum_list_of_lists([[1], [2]]) # 3
+    print sum_list_of_lists([[1, 2], [3]]) # 6
+    print sum_list_of_lists([[1, 2], [3], [], [4, 5]]) # 15
+    print sum_list_of_lists([[1, 2], [3], [-5], [4, 5]]) # 10
+
+#### Expected Output
+
+    0
+    0
+    3
+    6
+    15
+    10
+
+<br/><a id="Tasks_13_to_16"></a>
+
+## Tasks 13-16: Improving `sum_list_of_lists`
+
+<br/><a id="Task_13"></a>
+### Task 13: Flattening a list of lists
+
+#### Instructions:
+
+Create a function `flatten`, that, when given a list of lists, produces
+a list containing the same elements, all in one list.
+
+i.e. `[[1, 2], [3]]` becomes `[1, 2, 3]`
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        ...
+        return acc
+
+    # Test Code
+    print "Testing"
+
+    print flatten([]) # []
+    print flatten([[], []]) # []
+    print flatten([[1], [2]]) # [1, 2]
+    print flatten([[1, 2], [3]]) # [1, 2, 3]
+    print flatten([[1, 2], [3], [], [4, 5]]) # [1, 2, 3, 4, 5]
+
+<br/><a id="Task_14"></a>
+### Task 14: Using `sum_list` in `sum_list_of_lists`
+
+#### Instructions:
+
+When writing your first implementation of `sum_list_of_lists` you may have
+written the function using nested loops (one `for` or `while` loop inside
+another). However, your inside for loop, looks suspiciously similar to the loop
+inside `sum_list`.
+
+Why is that? It's because they are both doing the same thing: Summing a list to
+produce a number. This means your inner loop can be replaced with `sum_list`.
+
+Perform the replacement in your version of `sum_list_of_lists` and make sure the
+behaviour remains unchanged.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code and Expected Output
+
+Same as for [Task 12](#Task_12)
+
+<br/><a id="Task_15"></a>
+### Task 15: Using `flatten` in `sum_list_of_lists`
+
+#### Instructions:
+
+If you compare the outputs of `flatten` and `sum_list_of_lists` on the same
+lists, you may notice a pattern: If you sum the result of `flatten` you get
+the result of `sum_list_of_lists`. This happens to always be true, and we can
+take advantage of this fact to make `sum_list_of_lists` **even** shorter.
+
+Replace the definition of `sum_list_of_lists` with calls to `flatten` and
+`sum_list`, making sure the behaviour stays the same once again.
+
+#### What you need to know:
+
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate code and Expected Output:
+
+Same as for [Task 12](#Task_12)
+
+<br/><a id="Task_16"></a>
+### Task 16: Generalising `flatten`
+
+#### Instructions:
+
+What if you wanted to define a function called `sum_nested_lists`, which sums
+the elements of a list, no matter how deeply they are nested, (even if they
+aren't nested to the same level)?
+
+We can simplify this problem into one we understand: summing a single list. We
+do this by once again flattening the inputted list so it has no nested lists,
+but still contains the same elements.
+
+But if we give our current flatten function a list like `[[1, 2], 3]`, it would
+complain, because the outer list doesn't contain all lists. And furthermore, if
+we tried to give it a list like `[[[1, 2], [3]], [[4, 5], [6]]]` then it would
+also break because the lists are nested more deeply than it is designed to deal
+with.
+
+We need to create a function that checks the types of all the elements that it
+sees, before adding them  to `acc`. And if the item is a list, we should
+flatten it too, before adding its elements.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate:
+
+Replace all of the ellipses (`...`)
+
+    def flatten(lst):
+        acc = [] # The accumulating list
+        for x in lst:
+            if type(x) == list:
+                ... # Flatten it before adding
+            else:
+                ... # Append the element
+
+        return acc
+
+    def sum_nested_lists(lst):
+        ... # Same as for `sum_list_of_lists` after task 15.
+
+    # Test Code
+    print "Testing"
+
+    print sum_nested_lists([]) # 0
+    print sum_nested_lists([[], []]) # 0
+    print sum_nested_lists([1, 2, 3]) # 6
+    print sum_nested_lists([[[]], []]) # 0
+    print sum_nested_lists([[1, 2], 3]) # 6
+    print sum_nested_lists([[1, 2], [3, []], [[[4]]]]) # 10
+
+#### Expected Output:
+
+    0
+    0
+    6
+    0
+    6
+    10
+
+<br/><a id="Tasks_17_to_20"></a>
+## Tasks 17-20: Sorting lists
+
+Sorting lists is a task that a lot of time has been spent trying to master, in
+the computing world. There are several ways to sort lists, but we are going
+to look at some simple options here that are easy to understand.
+
+Neither of the implementations you reach will be perfect or very efficient, but
+they will capture the essence of the task (the *algorithm*) and they will work.
+The first algorithm is rarely used in the real world, although the second is
+very popular, in some of its other forms.
+
+<br/><a id="Task_17"></a>
+### Task 17: Removing the smallest element
+
+#### Instructions:
+
+Create a function called `remove_min` that, when given a list, finds its minimal
+element and deletes it from the list, returning the element it deleted.
+
+You will find that this function is very similar to your previous function,
+`min_list`, and you can use this fact to guide you in the implementation of
+`remove_min`.
+
+We will use this function later on, in a sorting algorithm called *selection
+sort*.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all of the ellipses (`...`)
+
+**Note:** the `del` command, introduced for dictionaries, also works for lists
+in the natural way: `del lst[2]` will remove the element at index 2.
+
+**Note:** you may find it helpful to use a `while` loop in this task because you
+will need to keep track of the index of the minimal element as well as the
+element itself, so you can delete it.
+
+    def remove_min(lst):
+        if len(lst) == 0: return # Nothing to remove for empty lists
+
+        min_i = 0
+        min   = lst[0]
+        i     = 1
+
+        ... # Loop through the list, finding the smallest element
+        ... # Delete the minimal element
+        return min
+
+    # Test Code
+    print "Testing"
+
+    test = [3,4,8,9,7]
+    print remove_min(test), test # 3 [4, 8, 9, 7]
+    print remove_min(test), test # 4 [8, 9, 7]
+    print remove_min(test), test # 7 [8, 9]
+    print remove_min(test), test # 8 [9]
+    print remove_min(test), test # 9 []
+
+<br/><a id="Task_18"></a>
+### Task 18: Selection sort
+
+#### Instructions:
+
+If you look at the output from the testing of `remove_min` you will see
+that succesive calls to `remove_min` return the elements of list in
+increasing order. We can exploit this in our sorting algorithm: We remove the
+minimal element from the list, until there are no elements left, appending each
+in turn to the end of a new list.
+
+#### What you need to know:
+
+ * [Variables](../lesson_1/#Variables)
+ * [Lists](../lesson_2/#Lists)
+ * [**while** loops](../lesson_2/#While_Loop)
+ * [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def selection_sort(lst):
+        sorted = []
+        list_len = len(lst) # Store this now because our loop will make it
+                            # smaller
+
+        ... # Loop through the list removing minimal elements from `lst` and
+            # appending them to `sorted`.
+
+        return sorted
+
+    # Test Code
+    print "Testing"
+
+    selection_sort([]) # []
+    selection_sort([1, 2, 3]) # [1, 2, 3]
+    selection_sort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    selection_sort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+    []
+    [1, 2, 3]
+    [3, 4, 7, 8, 9]
+    [-8, -4, -2, 2, 4, 8]
+
+<br/><a id="Task_19"></a>
+### Task 19: Partitioning a list
+
+#### Instructions:
+
+Partitioning involves taking a list, and producing two lists that together
+contain all the elements of the original in such a way that all the elements in
+one list are the elements less than some provided value (which we will call the
+`pivot`) and all the elements in the other list are greater than or equal to the
+`pivot`.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace all the ellipses (`...`)
+
+    def partition(pivot, lst):
+        lt, gte = [], [] # Less than, and greater than or equal to lists
+
+        ... # Loop through lst, filling `lt` and `gte`
+
+        return lt, gte
+
+    # Test Code
+    print "Testing"
+
+    print partition(0, []) # ([], [])
+    print partition(1, [1, 2, 3]) # ([], [1, 2, 3])
+    print partition(2, [1, 2, 3]) # ([1], [2, 3])
+    print partition(4, [1, 2, 3]) # ([1, 2, 3], [])
+
+#### Expected Output:
+
+    ([], [])
+    ([], [1, 2, 3])
+    ([1], [2, 3])
+    ([1, 2, 3], [])
+
+<br/><a id="Task_20"></a>
+### Task 20: Quicksort
+
+#### Instructions:
+
+Quicksort is a popular sorting algorithm that relies upon the principle of
+partitioning lists.
+
+ * Given a particular pivot element in the list (for convenience, let us just
+   use the first element) partition the **rest** of the list according to the
+   pivot.
+ * Now if we slot the pivot element in between the elements less than it and
+   greater than or equal to it, we find the pivot is in the *right place in the
+   list*.
+ * But the two lists provided by partition are not in sorted order, so how do we
+   deal with them? Well, we use our `quicksort` function to sort those too.
+ * Additionally, we say that lists with one or fewer elements are trivially
+   sorted, so we can just return them without doing any work.
+
+Use the hints above to define a function `quicksort` that uses partition to sort
+the list provided to it.
+
+#### What you need to know:
+
+* [Variables](../lesson_1/#Variables)
+* [Lists](../lesson_2/#Lists)
+* [**for** loops](../lesson_2/#For_Loop) or
+  [**while** loops](../lesson_2/#While_Loop)
+* [Functions](../lesson_3/#Functions)
+
+#### Boilerplate Code:
+
+Replace the ellipses (`...`)
+
+**Note:** It may be useful to know that python has a feature that allows you to
+access a part of a list, i.e. `lst[n:]` means the elements from index
+`n` onwards. This may be useful when trying to get all the elements bar the
+first (which we use as the pivot).
+
+    def quicksort(lst):
+        # Lists of length 1 or 0 are already sorted, just return them
+        if len(lst) <= 1: return lst
+
+        pivot = ... # The first element
+        left, right = partition(pivot, ...) # Partition the rest of the list
+
+         # Sandwich the pivot between the sorted left and right sides
+        return ... + [pivot] + ...
+
+    # Test Code
+    print "Testing"
+
+    quicksort([]) # []
+    quicksort([1, 2, 3]) # [1, 2, 3]
+    quicksort([3, 4, 8, 9, 7]) # [3, 4, 7, 8, 9]
+    quicksort([-8, 8, 4, -4, -2, 2]) # [-8, -4, -2, 2, 4, 8]
+
+#### Expected Output:
+
+Same as for [Task 18](#Task_18)
+
+
+<br/><a id="Advanced"></a>
+## Advanced Tasks
+
+Congratulations if you have got this far and completed all of the tasks, we
+have not actually added any more of our own tasks, but you are probably ready
+to have a go at some challenges from [Project
+Euler](http://projecteuler.net/problems). There will be plenty to keep you
+going there!
