@@ -51,16 +51,18 @@ We just defined a "function" called `sayhi`. You can call a function by using
 its name followed by parentheses. In this case, it's `sayhi()`.
 
 Just like with loops and if statements, here the indentation is important. The
-"body" of the function is all the code indented to the right immediately below
-the function name.
+**"body"** of the function is all the code indented to the right immediately
+below the function name.
 
 So what is going on in the above example?
 
-Well, the first two lines are simply *defining* a function. That means that the
-`print "hi"` does not actually happen. Python just knows that when you type
-`sayhi()` then, it should print the message `"hi"`.
+Well, the first two lines are simply **defining** a function. That means that
+the `print "hi"` code (the **body** of the function), does not actually run.
+Python knows that it should run the code inside the **body** of the function
+only when you type `sayhi()` to use the function. *(This is called "calling"
+the function).*
 
-Then the following two `sayhi()`s are where the message actually gets printed.
+The following two `sayhi()`s are where the message actually gets printed.
 Every time python sees a function name followed by brackets, it looks for that
 function's definition, runs it in the name's position, and then continues
 running the code after the function name.
@@ -70,12 +72,13 @@ it puts the code of the function definition in its place and runs that instead.
 That is basically what happens, but as you will see in the "Variable Scoping"
 section, there are some more things to take into account.
 
-In this example you can see one of the advantages of functions straight away: We
-wrote the code once, but we can use it however many times we want. This means if
-that code were to change, and we had used it in multiple places, rather than
-tracking down every place it's been used and changing it there, we need only
-change it in one place: the function and we can be sure in the knowledge that
-everywhere the function is used will now be using the changed code.
+In this example you can see one of the advantages of functions straight away:
+We wrote the code once, but we can use it however many times we want. This
+means that if that code were to change, and we had used it in multiple places,
+rather than tracking down every place it's been used and changing it there, we
+need only change it in one place: the function **definition**. Afterwards we
+can be sure that everywhere the function is used will now be using the updated
+code.
 
 #### Introducing parameters
 
@@ -88,46 +91,53 @@ Lets look at a slightly different function:
             return -x
 
     print absolute(5)
-        # => 5
+    # => 5
 
     print absolute(-5)
-        # => 5
+    # => 5
 
 This function, called `absolute` takes a parameter `x`. When the function is
-called, for example with  `absolute(5)`, then `x` is assigned the value `5`, and
-the function is run from top to bottom, just like a function with no parameters.
+called, for example with  `absolute(5)`, then `x` is assigned the value `5`,
+and the function is run from top to bottom, just like a function with no
+parameters.
+
+**Parameters** are basically the same as **variables**, with a few subtle
+differences. Parameters are created and assigned when you **call** a function,
+and when the function is finished they are disposed of. Other than this they
+are the same, you can even change the values of parameters!
 
 #### Return values
 
 This function also introduced the `return` keyword, which lets a function stop
-executing immediately, and return a result to the code that initially called the
-function.
+executing immediately, and return a result to the code that initially called
+the function.
 
-If python executes `absolute(5)`, then after checking `x > 0`,
-which is true (because, remember `x` is 5), python will see the line `return x`,
-so it will stop executing the function, and return the value of `x` (which is
-5). So if we write `print absolute(5)` then as `absolute(5)` returns `5`, we
-expect python to `print 5`.
+If python executes `absolute(5)`, then after checking `x > 0`, which is true
+(because, remember `x` is `5`), python will see the line `return x`.
+This means it will stop executing the function, and return the value of `x`
+(which is `5`). So if we write `print absolute(5)` then as `absolute(5)`
+returns `5`, we expect python to `print 5`.
 
 The next time we run the `absolute` function, we give it `-5` as the parameter.
 Which makes `x > 0` no longer true, resulting in the line `return -x` being
-called. Because `x` is -5, this makes `-x` +5 (or just 5), so we get python
+run. Because `x` is `-5`, `-x` is just `5` (positive 5), so we get python
 printing `5` again.
 
 #### Defining a function
 
-We write `def functionName(param1, param2, ...):` to define a function.
+We write `def functionName(param1, param2, ...):` to define a function, making
+sure we include some indented code afterwards that serves as the body.
 
- * You can have zero or more parameters.
-  * Add in the function code below the definition, remembering to indent it
-     further right than the definition (by atleast 4 spaces).
+* You can have zero or more parameters.
+* Add in the function code below the definition, remembering to indent it
+  further right than the definition (by atleast 4 spaces).
 
 #### Calling a function
 
 To call a function, write `functionName(value1, value2)`.
 
 This has the effect of running the code in the function, with `param1` equal to
-the value `value1`, and analogously for any other parameters.
+the value `value1`, and likewise for any other parameters.
 
 You'll often hear the terms "argument" and "parameter" used when talking about
 functions. In this example `param1` is a "parameter" because it is in the
@@ -135,52 +145,19 @@ function definition (`def functionName(param1, param2, ...):`).
 
 In the above example of a function call, we call `value1` an "argument" to the
 function. When the function is run, we say that "the parameter `param1` will
-take the value `value1`". Functions may see complicated at first, but they will
-make more sense when you begin to use them
+take the value `value1`". Functions may seem complicated at first, but they
+will begin to feel more natural the more you use them.
 
 #### Feeling familiar?
 
 It turns out that functions are in fact not new, you've been using loads of
-them! `print`, `len`, `raw_input`, `range`, and even `turtle.right` are all
-functions! Functions are a really useful way of taking a chunk of code, giving
-it a name, and making it reusable.
+them! `len`, `raw_input`, `range`, and even `turtle.right` are all functions!
+Functions are a really useful way of taking a chunk of code, giving it a name,
+and making it reusable.
 
-#### Uses of functions
+#### Creating your own function
 
-Clearly functions are useful to prevent us writing the same code time and time
-again. But, because functions have parameters, they enable something much more
-powerful, the generalisation of code. Suppose we write the following:
-
-
-    james = {'name': 'James', 'dob':1993 }
-    sam = {'name': 'Sam', 'dob':1992 }
-    print(james['name'] + ' - ' + str(james['dob']))
-    print(sam['name'] + ' - ' + str(sam['dob']))
-
-
-With a function, we can generalise this as follows:
-
-
-    def printPerson(person):
-        print(person['name'] + ' - ' + str(person['dob']))
-
-    james = {'name': 'James', 'dob':1993 }
-    sam = {'name': 'Sam', 'dob':1992 }
-    printPerson(james)
-    printPerson(sam)
-
-
-Yes, in this example we did write more code, but now suppose we want to actually
-print the date of birth first and then the name. We can simply change the code
-in the printPerson function, and reap the rewards everywhere we use the
-function. You'll see that we defined the function before we used it in the code.
-Check what happens if you run the same example as above, but instead with the
-function printPerson below the line `printPerson(sam)`. Hopefully you got an
-error, because python hadn't yet seen the function definition for printPerson,
-so it didn't know what to do when it got to the line `printPerson(sam)`. So make
-sure you always define your functions before any code that calls the function.
-
-Use the function below to complete the challenge:
+Here is a function that takes two numbers and returns the maximum of the two:
 
     def max(x,y):
         if(x > y):
@@ -191,90 +168,104 @@ Use the function below to complete the challenge:
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Challenge</strong></div>
   <div class="panel-body">
-    Can you create a function called max_list which takes in an list of ints as a parameter, and returns the largest int in the list.
+    Can you create a function called <code>max_list</code> which takes in a
+    list of <code>ints</code> as a parameter, and returns the largest
+    <code>int</code> in the list.
     <br/>
-    <strong>Hint</strong> use a for loop! You may need to look over materials in the previous lessons.
+    <strong>Hint</strong> use a <code>for</code> loop! You may need to look
+    over materials in the previous lessons to remind yourself.
   </div>
 </div>
 
 #### Variables and their scope
 
 Lastly, we need to talk about using and defining variables inside a function.
-When we call a function, like `printPerson(james)`, then as we discussed, the
-parameter `person` (which is a variable) gets assigned to the same value as the
-argument `james`. Now this `person` variable is interesting, because it only
-exists inside the function. So from outside the function, there is no way to
-access the value `person`. This actually makes a lot of sense, because the
-variable `person` only ever gets a value when the function is called. This
-happens because of "scope". All variables have a scope, but it becomes
+
+When we call a function, like `max(1, 3)`, then as we discussed, the parameters
+`x` and `y` (which are also variables) get assigned to the values `1` and `3`.
+Now these variables are interesting, because they only exists inside the
+function. So from outside the function, there is no way to access the values
+`x` or `y`. This actually makes a lot of sense, because they only ever get
+assigned values when the function is called. This happens because of something
+called **variable scope**. All variables have a scope, but it becomes
 particularly noticeable in functions. It's best to see how this works by
 examples:
 
-    def printAndAddOne(number):
+    def print_and_add_one(number):
         print(number)
         return number + 1
 
     def main():
         x = 1
-        printAndAddOne(x)
-        x = printAndAddOne(x)
+        print_and_add_one(x)
+        x = print_and_add_one(x)
         print(x)
 
-    # print(number)
-
     main()
+    # print(number)
     # print(x)
 
 This example shows the important behaviour of scoped variables. What do you
 think the output will be? Now run the code, and try uncommenting the lines
 `# print(number)` and `# print(x)` to see what happens.
 
-The `printAndAddOne`
-function only accesses the variable number, and this is allowed, since number is
-a paramter to the function. In some cases, functions can access variables that
-are not one of their parameters, but this is strongly discouranged as it can
-lead to confusion.
+The `print_and_add_one` function only accesses the variable number, and this is
+allowed, since number is a paramter to the function. In some cases, functions
+can access variables that are not one of their parameters, but this is strongly
+discouranged as it can lead to confusion.
 
 Lets go through this example line by line as python would.
-When python runs this code, it firstly sees a function defition for
-`printAndAddOne`. It remembers that its seen the function, and then moves on to
-below the function. Now it sees a function definition for `main`, and again
-moves on. Then python sees the function call `main()` so it jumps to the
-function `main` and starts executing the code inside the function. Firstly it
-assigns the value `1` to `x`, but because python is in a new scope (indicated by
-the fact we are in a new function), it notes that when it leaves this scope, it
-will forget everything about this assignment. Then it moves forwards to the next
-line, and sees a function call `printAndAddOne(x)` so python remebers the
-current line (for later), and jumps to the function `printAndAddOne`, assigning
-`number` the value of `x` (which is `1`). Next it prints the current value of
-`number` (which is `1`), and returns the value `number + 1`. Python notes that
-its finished this function, so it jumps back to where it was before. It was
-previously at the line `printAndAddOne(x)`, and python sees that it can discard
-the returned value from the function, since we do not use it at this line. Now
-it moves forwards another line, and again sees another function call of
-`printAndAddOne`, so again that function is executed (exactly as before). This
-time, because the line says `x = printAndAddOne(x)`, python assigns `x` the
-returned value of the function. After executing the function, python will then
-print the new value of `x`. Now, the line `#print(number)` is commented, so
-python ignores that. The reason we cannot print the value `number`, is because
-that variable is "forgotten" when python leaves the `printAndAddOne` funtion.
-Similarly, when python leaves the `main` function, all new variable assignments
-are forgotten about, which is why we cannot `print(x)` after we have left the
-`main` function. So when python changes out of a functions scope, then any newly
-introduced variables (in that function) are forgotten.
 
-If that didn't make sense
-then try reading it through a few times, and refer constantly to the code to see
-how python is moving through the code, and what is happening to the variables at
-each line. If it still doesn't make sense, then ask a helper to explain!
+* When python runs this code, it firstly sees a function defition for
+  `print_and_add_one`. It remembers that its seen the function, and then moves
+  on to below the function.
+* Now it sees a function definition for `main`, and again moves on.
+* Then python sees the function call `main()` so it jumps to the function
+  `main` and starts executing the code inside the function.
+    * Firstly it assigns the value `1` to `x`, but because python is in a new
+      scope (indicated by the fact we are in a new function), it notes tha
+      when it leaves this scope, it will forget everything about `x`.
+    * Then it moves forwards to the next line, and sees a function call to
+      `print_and_add_one(x)` so python remebers the current line (for later),
+      and jumps to the function `print_and_add_one`, assigning `number` the
+      value of `x` (which is `1`).
+        * Inside the body of `print_and_add_one`, it prints the current value
+          of `number` (which is `1`).
+        * Python then returns the value `number + 1`, which is `2` and notes
+          that it has finished this function, so it jumps back to where it was
+          before.
+    * It was previously at the line `print_and_add_one(x)`, and python sees
+      that it can discard the returned value (`2`) from the function, since we
+      do not use it here.
+    * Now it moves forwards another line, and again sees another function call
+      of `print_and_add_one`, so again that function is executed (exactly as
+      before).
+    * This time, because the line says `x = print_and_add_one(x)`, python
+      assigns `x` the returned value of the function (`2`).
+    * After executing the function, python will then print the new value of
+      `x`.
+
+Now, the line `#print(number)` is commented, so python ignores that. The reason
+we cannot print the value `number`, is because that variable is "forgotten"
+when python leaves the `print_and_add_one` funtion. Similarly, when python
+leaves the `main` function, all new variable assignments are forgotten about,
+which is why we cannot `print(x)` after we have left the `main` function.
+
+So when python changes out of a functions scope, any newly introduced variables
+(in that function) are forgotten.
+
+If that didn't make sense then try reading it through a few times, and refer
+constantly to the code to see how python is moving through the code, and what
+is happening to the variables at each line. If it still doesn't make sense,
+then ask a helper to explain!
 
 <div class="panel panel-primary">
   <div class="panel-heading"><strong>Task</strong></div>
   <div class="panel-body">
-    Try creating some more functions and experiment with what variables you can, and cannot access when the code is inside and outside a function.
+    Try creating some more functions and experiment with what variables you
+    can, and cannot access when the code is inside and outside a function.
   </div>
 </div>
-
 
 ## The Tasks
 

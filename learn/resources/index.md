@@ -15,7 +15,7 @@ come along and work from the start, or from where you currently are. Helpers
 will be available to come around and help you no matter which stage you're at!
 
 *Note: The course has been moved around a little (the text based adventure game
-has been moved further on)*
+has been moved further on, and we have a new section, OOP)*
 
 ### [[lesson_0]]
 
