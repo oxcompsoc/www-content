@@ -1,4 +1,4 @@
-[meta title="Lesson 4: OOP (Object Oriented Programming)" /]
+[meta title="Lesson 4: OOP (Object Oriented Programming) [INCOMPLETE]" /]
 
 [embed page="/learn/resources/highlight.js/embed" /]
 
@@ -226,4 +226,28 @@ need to add it when calling the method.
   </div>
 </div>
 
+## What do I do now?
 
+Unfortunately, this lesson you've just read was somewhat rushed, and
+incomplete. I (Sam) apologies about that. This lesson will be expanded and
+hopefully completed by next session (that's the problem with writing it in
+term-time eh?).
+
+The right thing to do now would be to learn more about OOP in python, I would
+recommend you take a slightly different tactic at this point to what you
+normally would.
+
+Head on over to the [Python Section on
+Codecademy](http://www.codecademy.com/tracks/python) and do lessons 19 and 20.
+Codecademy allows you to learn, write code and run code all in your web
+browser, and they have some pretty cool tutorials.
+
+If you finish that, and are stuck for things to do, either:
+
+* Complete as many python lessons as you can on Codecademy.
+* Start learning another language on Codecademy.
+* Try and do as many challenges as you can on [Project
+  Euler](http://projecteuler.net/problems).
+* or ask a TA for things to do!
+
+Next week will be back to normal, I promise! =)
